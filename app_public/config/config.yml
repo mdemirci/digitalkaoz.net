@@ -13,7 +13,7 @@ framework:
         auto_start:     true
 
 #bootstrap: ~
-project_utilities: ~
+#project_utilities: ~
 
 # Twig Configuration
 twig:

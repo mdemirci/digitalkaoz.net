@@ -37,3 +37,9 @@
 [submodule "src/Knplabs/MenuBundle"]
 	path = src/Knplabs/MenuBundle
 	url = https://github.com/knplabs/MenuBundle.git
+[submodule "src/rs/ProjectUtilitiesBundle"]
+	path = src/rs/ProjectUtilitiesBundle
+	url = git@github.com:digitalkaoz/ProjectUtilitiesBundle.git
+[submodule "src/Sensio/SensioFrameworkExtraBundle"]
+	path = src/Sensio/SensioFrameworkExtraBundle
+	url = https://github.com/sensio/SensioFrameworkExtraBundle.git

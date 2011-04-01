@@ -2,14 +2,8 @@ imports:
     - { resource: config.yml }
 
 framework:
-    error_handler: false
-    test: ~
-
-#web_profiler:
-#    toolbar: false
-#    intercept_redirects: false
-
-#project_utilities: ~
+    router:   { resource: "%kernel.root_dir%/config/routing_dev.yml" }
+    profiler: { only_exceptions: false }
 
 zend:
     logger:

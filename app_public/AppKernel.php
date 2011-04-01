@@ -8,8 +8,8 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-//		$file = $this->getRootDir().'/config/bundles.yml';
-//        return BundleLoader::loadFromFile($file,$this->getEnvironment());	
+		$file = $this->getRootDir().'/config/bundles.yml';
+        return BundleLoader::loadFromFile($file,$this->getEnvironment());	
 	}
 
     public function registerRootDir()

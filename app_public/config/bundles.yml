@@ -1,14 +1,17 @@
 all:
   - Symfony\Bundle\FrameworkBundle\FrameworkBundle
+#  - Symfony\Bundle\Sensio\FrameworkExtraBundle\FrameworkExtraBundle
   - Symfony\Bundle\TwigBundle\TwigBundle
   - Symfony\Bundle\ZendBundle\ZendBundle
   - Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle
 #- Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle
 #- Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle
-
-  - rs\ProjectUtilitiesBundle\ProjectUtilitiesBundle
+#  - rs\ProjectUtilitiesBundle\ProjectUtilitiesBundle
+  - rs\kaoz4Bundle\kaoz4Bundle
+#  - Knplabs\MenuBundle
   
 dev:
-  - Symfony\Bundle\DoctrineBundle\DoctrineBundle
+  - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
   
 test:
+  
