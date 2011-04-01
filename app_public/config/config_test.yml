@@ -1,0 +1,17 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    error_handler: false
+    test: ~
+
+#web_profiler:
+#    toolbar: false
+#    intercept_redirects: false
+
+project_utilities: ~
+
+zend:
+    logger:
+        priority: debug
+        path:     %kernel.logs_dir%/%kernel.environment%.log

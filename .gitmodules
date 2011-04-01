@@ -34,3 +34,6 @@
 [submodule "vendor/zend"]
 	path = vendor/zend
 	url = git://github.com/zendframework/zf2.git
+[submodule "src/Knplabs/MenuBundle"]
+	path = src/Knplabs/MenuBundle
+	url = https://github.com/knplabs/MenuBundle.git
