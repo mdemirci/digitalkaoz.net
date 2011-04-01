@@ -1,7 +1,26 @@
 {% extends "kaoz4::base.html.twig" %}
 
 {% block body %}
-    <h1>Demo Bundle</h1>
-
-    {% block content %}{% endblock %}
+<div class="page_margins">
+    <div id="header">
+        {% include "kaoz4:Components:mainMenu.html.twig" %}
+    </div>
+    <div id="main">
+        <div id="col1">
+            <div id="col1_content" class="clearfix">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div id="col3">
+            <div id="col3_content" class="clearfix">
+                {% block sidebar %}{% endblock %}
+                <!-- add your content here -->
+            </div>
+            <!-- IE Column Clearing -->
+            <div id="ie_clearing"> &#160; </div>
+        </div>
+    </div>
+    {% include "kaoz4:Components:footer.html.twig" %}
+</div>
+</div>
 {% endblock %}

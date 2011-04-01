@@ -12,6 +12,8 @@ class HomeController extends Controller
     public function indexAction()
     {
         //return array('name'=>'foo');
+        $menu = $this->get('menu.main');
+        
         return $this->render('kaoz4:Home:index.html.twig',array('name'=>'foo'));
     }
 }

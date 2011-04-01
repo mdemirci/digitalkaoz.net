@@ -19,7 +19,7 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-
+    
 ## Doctrine Configuration
 #doctrine:
 #   dbal:
@@ -40,3 +40,11 @@ twig:
 #    host:       smtp.gmail.com
 #    username:   xxxxxxxx
 #    password:   xxxxxxxx
+
+imports:
+    - { resource: "@kaoz4/Resources/config/menu.xml" }
+
+knplabs_menu:
+    twig: true
+    templating: true
+    provider: true

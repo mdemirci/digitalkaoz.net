@@ -15,6 +15,7 @@ $loader->registerNamespaces(array(
     'Zend'                           => __DIR__.'/../vendor/zend/library',    
     
     'Knplabs'                        => __DIR__.'/../src',
+    'Sonata'                        => __DIR__.'/../src',
 #    'Symfony\\Bundle'                         => __DIR__.'/../src',
     'rs'                             => __DIR__.'/../src'
 ));
