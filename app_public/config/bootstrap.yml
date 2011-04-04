@@ -1,8 +1,0 @@
-commands:
-  - 'doctrine:generate:entities FooBundle'
-  - 'doctrine:schema:update'
-  - 'help'
-  
-shells:
-  - 'ls'
-  

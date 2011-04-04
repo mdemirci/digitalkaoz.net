@@ -34,21 +34,21 @@
 [submodule "vendor/zend"]
 	path = vendor/zend
 	url = git://github.com/zendframework/zf2.git
-[submodule "src/Knplabs/MenuBundle"]
-	path = src/Knplabs/MenuBundle
-	url = https://github.com/knplabs/MenuBundle.git
 [submodule "src/rs/ProjectUtilitiesBundle"]
 	path = src/rs/ProjectUtilitiesBundle
 	url = git@github.com:digitalkaoz/ProjectUtilitiesBundle.git
-[submodule "src/Sonata/NewsBundle"]
-	path = src/Sonata/NewsBundle
-	url = git@github.com:sonata-project/NewsBundle.git
-[submodule "src/sonata-project/AdminBundle"]
-	path = src/sonata-project/AdminBundle
-	url = https://github.com/sonata-project/AdminBundle.git
-[submodule "src/Sensio/Bundle/FrameworkExtraBundle"]
-	path = src/Sensio/Bundle/FrameworkExtraBundle
+[submodule "vendor/bundles/Sensio/Bundle/FrameworkExtraBundle"]
+	path = vendor/bundles/Sensio/Bundle/FrameworkExtraBundle
 	url = git://github.com/sensio/SensioFrameworkExtraBundle.git
 [submodule "src/Bundle/BlogBundle"]
 	path = src/Bundle/BlogBundle
 	url = git@github.com:digitalkaoz/BlogBundle.git
+[submodule "vendor/monolog"]
+	path = vendor/monolog
+	url = git://github.com/Seldaek/monolog.git
+[submodule "vendor/bundles/Knplabs/Bundle/MenuBundle"]
+	path = vendor/bundles/Knplabs/Bundle/MenuBundle
+	url = https://github.com/knplabs/MenuBundle.git
+[submodule "vendor/bundles/sonata-project/AdminBundle"]
+	path = vendor/bundles/sonata-project/AdminBundle
+	url = https://github.com/sonata-project/AdminBundle.git
