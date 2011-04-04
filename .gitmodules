@@ -49,6 +49,6 @@
 [submodule "src/Sensio/Bundle/FrameworkExtraBundle"]
 	path = src/Sensio/Bundle/FrameworkExtraBundle
 	url = git://github.com/sensio/SensioFrameworkExtraBundle.git
-[submodule "Bundle/BlogBundle"]
-	path = Bundle/BlogBundle
+[submodule "src/Bundle/BlogBundle"]
+	path = src/Bundle/BlogBundle
 	url = git@github.com:digitalkaoz/BlogBundle.git
