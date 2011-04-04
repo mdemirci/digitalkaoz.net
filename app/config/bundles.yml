@@ -1,0 +1,30 @@
+all:
+  - Symfony\Bundle\FrameworkBundle\FrameworkBundle
+  - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
+  - Symfony\Bundle\TwigBundle\TwigBundle
+  - Symfony\Bundle\MonologBundle\MonologBundle
+  - Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle
+#  - Symfony\Bundle\DoctrineAbstractBundle\DoctrineAbstractBundle
+  - Symfony\Bundle\DoctrineBundle\DoctrineBundle  
+#  - Symfony\Bundle\AsseticBundle\AsseticBundle
+  - Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle
+#  - Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle
+#  - rs\ProjectUtilitiesBundle\ProjectUtilitiesBundle
+
+  - rs\kaoz4Bundle\kaoz4Bundle
+#  - Sonata\NewsBundle\SonataNewsBundle
+  - Sonata\jQueryBundle\SonatajQueryBundle
+  - Sonata\BluePrintBundle\SonataBluePrintBundle
+  - Sonata\AdminBundle\SonataAdminBundle
+  - Knplabs\Bundle\MenuBundle\KnplabsMenuBundle
+  - Bundle\BlogBundle\BlogBundle
+  
+dev:
+  - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
+  
+test:
+  - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
+
+cli:
+  - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle
+  

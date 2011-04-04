@@ -2,5 +2,6 @@
 nbproject
 catalog.xml
 
-app_public/cache/*
-app_public/logs/*
+app/cache/*
+app/logs/*
+web/bundles/*

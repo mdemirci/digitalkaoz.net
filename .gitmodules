@@ -37,9 +37,6 @@
 [submodule "src/rs/ProjectUtilitiesBundle"]
 	path = src/rs/ProjectUtilitiesBundle
 	url = git@github.com:digitalkaoz/ProjectUtilitiesBundle.git
-[submodule "vendor/bundles/Sensio/Bundle/FrameworkExtraBundle"]
-	path = vendor/bundles/Sensio/Bundle/FrameworkExtraBundle
-	url = git://github.com/sensio/SensioFrameworkExtraBundle.git
 [submodule "src/Bundle/BlogBundle"]
 	path = src/Bundle/BlogBundle
 	url = git@github.com:digitalkaoz/BlogBundle.git
@@ -49,6 +46,15 @@
 [submodule "vendor/bundles/Knplabs/Bundle/MenuBundle"]
 	path = vendor/bundles/Knplabs/Bundle/MenuBundle
 	url = https://github.com/knplabs/MenuBundle.git
-[submodule "vendor/bundles/sonata-project/AdminBundle"]
-	path = vendor/bundles/sonata-project/AdminBundle
-	url = https://github.com/sonata-project/AdminBundle.git
+[submodule "vendor/bundles/Sensio/Bundle/FrameworkExtraBundle"]
+	path = vendor/bundles/Sensio/Bundle/FrameworkExtraBundle
+	url = git://github.com/sensio/SensioFrameworkExtraBundle.git
+[submodule "vendor/bundles/Sonata/jQueryBundle"]
+	path = vendor/bundles/Sonata/jQueryBundle
+	url = git@github.com:sonata-project/jQueryBundle.git
+[submodule "vendor/bundles/Sonata/BluePrintBundle"]
+	path = vendor/bundles/Sonata/BluePrintBundle
+	url = git@github.com:sonata-project/BluePrintBundle.git
+[submodule "vendor/bundles/Sonata/AdminBundle"]
+	path = vendor/bundles/Sonata/AdminBundle
+	url = git@github.com:sonata-project/AdminBundle.git
