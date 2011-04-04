@@ -46,9 +46,9 @@
 [submodule "src/sonata-project/AdminBundle"]
 	path = src/sonata-project/AdminBundle
 	url = https://github.com/sonata-project/AdminBundle.git
-[submodule "src/Bundle/BlogBundle"]
-	path = src/Bundle/BlogBundle
-	url = git@github.com:digitalkaoz/BlogBundle.git
 [submodule "src/Sensio/Bundle/FrameworkExtraBundle"]
 	path = src/Sensio/Bundle/FrameworkExtraBundle
 	url = git://github.com/sensio/SensioFrameworkExtraBundle.git
+[submodule "Bundle/BlogBundle"]
+	path = Bundle/BlogBundle
+	url = git@github.com:digitalkaoz/BlogBundle.git
