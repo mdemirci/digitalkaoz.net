@@ -22,8 +22,10 @@ class MainMenu extends Menu
         $github->setLinkAttribute('target','_blank');
         
         $this->addChild('Home', $router->generate('homepage'));
+        $this->addChild('Blog', $router->generate('blog_home'));
         $this->addChild($github);
         $this->addChild('Wordpress', 'http://digitalkaoz.net');
+        
         //$this->addChild('News', $router->generate('news'));
     }
 }

@@ -1,16 +1,20 @@
 all:
   - Symfony\Bundle\FrameworkBundle\FrameworkBundle
-#  - Symfony\Bundle\Sensio\FrameworkExtraBundle\FrameworkExtraBundle
+  - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
   - Symfony\Bundle\TwigBundle\TwigBundle
   - Symfony\Bundle\ZendBundle\ZendBundle
   - Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle
+#  - Symfony\Bundle\DoctrineAbstractBundle\DoctrineAbstractBundle
+  - Symfony\Bundle\DoctrineBundle\DoctrineBundle  
 #  - Symfony\Bundle\AsseticBundle\AsseticBundle
-#- Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle
-#- Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle
+  - Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle
+#  - Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle
 #  - rs\ProjectUtilitiesBundle\ProjectUtilitiesBundle
+
   - rs\kaoz4Bundle\kaoz4Bundle
 #  - Sonata\NewsBundle\SonataNewsBundle
   - Knplabs\MenuBundle\KnplabsMenuBundle
+  - Bundle\BlogBundle\BlogBundle
   
 dev:
   - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle

@@ -2,6 +2,9 @@ homepage:
     pattern:  /
     defaults: { _controller: kaoz4:Home:index }
 
+blog_home:
+    pattern:  /blog
+    defaults: { _controller: Blog:Blog:home }
 #news:
 #    resource: '@SonataNews/Resources/config/routing/news.xml'
 #    prefix:   /news  

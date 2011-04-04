@@ -15,22 +15,32 @@ framework:
 #bootstrap: ~
 #project_utilities: ~
 
+#extra.config: ~
+#    router:  { annotations: false }
+#    request: { converters: false }
+#    view:    { annotations: false, manage_null_arguments: false }
+#    cache:   { annotations: false }
+    
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
     
 ## Doctrine Configuration
-#doctrine:
-#   dbal:
-#       dbname:   xxxxxxxx
-#       user:     xxxxxxxx
-#       password: ~
-#       logging:  %kernel.debug%
-#   orm:
-#       auto_generate_proxy_classes: %kernel.debug%
-#       mappings:
-#           HelloBundle: ~
+doctrine:
+   dbal:
+       connections:
+           default:
+               dbname:   kaoz4
+               user:     kaoz4
+               password: DRz6rC8jrzuvR7rE
+               logging:  %kernel.debug%
+   orm:
+       auto_generate_proxy_classes: %kernel.debug%
+       entity_managers:
+           default:
+               mappings:
+                    Blog: ~
 
 ## Swiftmailer Configuration
 #swiftmailer:

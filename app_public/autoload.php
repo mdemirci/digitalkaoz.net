@@ -16,7 +16,9 @@ $loader->registerNamespaces(array(
     
     'Knplabs'                        => __DIR__.'/../src',
     'Sonata'                        => __DIR__.'/../src',
+    'Bundle'                        => __DIR__.'/../src',
 #    'Symfony\\Bundle'                         => __DIR__.'/../src',
+    'Sensio'                        => __DIR__.'/../src',
     'rs'                             => __DIR__.'/../src'
 ));
 $loader->registerPrefixes(array(

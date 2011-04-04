@@ -40,9 +40,15 @@
 [submodule "src/rs/ProjectUtilitiesBundle"]
 	path = src/rs/ProjectUtilitiesBundle
 	url = git@github.com:digitalkaoz/ProjectUtilitiesBundle.git
-[submodule "src/Sensio/SensioFrameworkExtraBundle"]
-	path = src/Sensio/SensioFrameworkExtraBundle
-	url = https://github.com/sensio/SensioFrameworkExtraBundle.git
 [submodule "src/Sonata/NewsBundle"]
 	path = src/Sonata/NewsBundle
 	url = git@github.com:sonata-project/NewsBundle.git
+[submodule "src/sonata-project/AdminBundle"]
+	path = src/sonata-project/AdminBundle
+	url = https://github.com/sonata-project/AdminBundle.git
+[submodule "src/Bundle/BlogBundle"]
+	path = src/Bundle/BlogBundle
+	url = git@github.com:digitalkaoz/BlogBundle.git
+[submodule "src/Sensio/Bundle/FrameworkExtraBundle"]
+	path = src/Sensio/Bundle/FrameworkExtraBundle
+	url = git://github.com/sensio/SensioFrameworkExtraBundle.git
