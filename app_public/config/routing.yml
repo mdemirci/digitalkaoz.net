@@ -2,8 +2,8 @@ homepage:
     pattern:  /
     defaults: { _controller: kaoz4:Home:index }
 
-imports:
-    - { resource: "@Blog/Resources/config/routing.yml" }
+blog:
+    resource: '@Blog/Resources/config/routing.yml'
 
 #news:
 #    resource: '@SonataNews/Resources/config/routing/news.xml'
