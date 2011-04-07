@@ -31,9 +31,9 @@ doctrine:
    dbal:
        connections:
            default:
-               dbname:   kaoz4
-               user:     kaoz4
-               password: DRz6rC8jrzuvR7rE
+               dbname:   
+               user:     
+               password: 
                logging:  %kernel.debug%
    orm:
        auto_generate_proxy_classes: %kernel.debug%
