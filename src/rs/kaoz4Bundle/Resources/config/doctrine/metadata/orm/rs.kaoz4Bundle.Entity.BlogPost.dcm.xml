@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="rs\kaoz4Bundle\Entity\BlogPost" repository-class="rs\kaoz4Bundle\Entity\BlogPostRepository">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <lifecycle-callbacks/>
+    
+<!--        <many-to-one
+            field="image"
+            target-entity="Application\Sonata\MediaBundle\Entity\Media"
+            >
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </many-to-one>
+
+        
+        <many-to-one
+            field="author"
+            target-entity="Application\FOS\UserBundle\Entity\User"
+           >
+            <cascade>
+                <cascade-persist />
+            </cascade>
+        </many-to-one>-->
+
+        <many-to-many
+            field="tags"
+            target-entity="rs\kaoz4Bundle\Entity\Tag"
+            inversed-by="posts"
+            fetch="EAGER"
+            >
+
+            <cascade>
+                <cascade-persist />
+                <!--<cascade-merge />-->
+                <!--<cascade-remove />-->
+                <!--<cascade-refresh />-->
+            </cascade>
+
+            <join-table name="blog__post_tag">
+                <join-columns>
+                    <join-column name="post_id" referenced-column-name="id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="tag_id" referenced-column-name="id"/>
+                </inverse-join-columns>
+            </join-table>
+
+        </many-to-many>
+
+        <one-to-many
+            field="comments"
+            target-entity="rs\kaoz4Bundle\Entity\Comment"
+            mapped-by="post"
+            orphan-removal="true">
+
+            <cascade>
+                <cascade-persist/>
+            </cascade>
+
+            <join-columns>
+                <join-column
+                    name="id"
+                    referenced-column-name="post_id"
+                />
+            </join-columns>
+
+            <order-by>
+                <order-by-field name="created_at" direction="DESC" />
+            </order-by>
+        </one-to-many>
+  </entity>
+</doctrine-mapping>

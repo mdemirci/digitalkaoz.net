@@ -1,0 +1,32 @@
+{% extends "kaoz4Bundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+
+    <div>
+    </div>
+
+    <div>
+        {{ post.content }}
+    </div>
+
+
+    {% render 'kaoz4Bundle:Blog:comments' with {
+        'post_id': post.id
+    } %}
+
+    {% if post.iscommentable %}
+        {% render 'kaoz4Bundle:Blog:addCommentForm' with {
+            'post_id': post.id,
+            'form': form
+        } %}
+    {% else %}
+        <div>
+            {% trans 'message_comments_are_closed' from 'NewsBundle' %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+        {{ menu('main') }}
+{% endblock %}

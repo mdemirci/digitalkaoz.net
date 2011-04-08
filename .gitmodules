@@ -37,9 +37,6 @@
 [submodule "src/rs/ProjectUtilitiesBundle"]
 	path = src/rs/ProjectUtilitiesBundle
 	url = git@github.com:digitalkaoz/ProjectUtilitiesBundle.git
-[submodule "src/Bundle/BlogBundle"]
-	path = src/Bundle/BlogBundle
-	url = git@github.com:digitalkaoz/BlogBundle.git
 [submodule "vendor/monolog"]
 	path = vendor/monolog
 	url = git://github.com/Seldaek/monolog.git
@@ -58,3 +55,6 @@
 [submodule "vendor/bundles/Sonata/AdminBundle"]
 	path = vendor/bundles/Sonata/AdminBundle
 	url = git@github.com:sonata-project/AdminBundle.git
+[submodule "vendor/bundles/Sonata/NewsBundle"]
+	path = vendor/bundles/Sonata/NewsBundle
+	url = git@github.com:sonata-project/NewsBundle.git

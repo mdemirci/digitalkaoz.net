@@ -1,3 +1,7 @@
+imports:
+    - { resource: parameters.ini }
+#    - { resource: security.yml }
+    
 framework:
     charset:       UTF-8
     error_handler: null
@@ -11,7 +15,13 @@ framework:
         default_locale: en
         lifetime:       3600
         auto_start:     true
-
+#
+#assetic:
+#    debug: %kernel.debug%
+#    use_controller: false
+#    filters:
+#        cssrewrite: ~
+#        
 #bootstrap: ~
 #project_utilities: ~
 
@@ -20,7 +30,28 @@ framework:
 #    request: { converters: false }
 #    view:    { annotations: false, manage_null_arguments: false }
 #    cache:   { annotations: false }
-    
+
+# AdminBundle
+#services:    
+#   kaoz4.admin.post:
+#      class: rs\kaoz4Bundle\Admin\PostAdmin
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, group: blog, label: post }
+#      arguments: [rs\kaoz4Bundle\Entity\BlogPost, kaoz4Bundle:PostAdmin]
+#      pool: AdminPool
+#   kaoz4.admin.comment:
+#      class: Sonata\NewsBundle\Admin\CommentAdmin
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, group: blog, label: comment }
+#      arguments: [rs\kaoz4Bundle\Entity\Comment, NewsBundle:CommentAdmin]
+#      pool: AdminPool
+#   kaoz4.admin.tag:
+#      class: Sonata\NewsBundle\Admin\TagAdmin
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, group: blog, label: tag }
+#      arguments: [rs\kaoz4Bundle\Entity\Tag, NewsBundle:TagAdmin]
+#      pool: AdminPool
+          
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
@@ -31,16 +62,19 @@ doctrine:
    dbal:
        connections:
            default:
-               dbname:   
-               user:     
-               password: 
-               logging:  %kernel.debug%
+                driver:   %database_driver%
+                host:     %database_host%
+                dbname:   %database_name%
+                user:     %database_user%
+                password: %database_password%
+                logging:  %kernel.debug%
    orm:
        auto_generate_proxy_classes: %kernel.debug%
        entity_managers:
            default:
                mappings:
-                    BlogBundle: ~
+                    SonataNewsBundle: ~
+                    kaoz4Bundle: ~
 
 ## Swiftmailer Configuration
 #swiftmailer:
@@ -50,9 +84,16 @@ doctrine:
 #    host:       smtp.gmail.com
 #    username:   xxxxxxxx
 #    password:   xxxxxxxx
+sonata_news:
+  admin:
+    post:     { entity: rs\kaoz4Bundle\Entity\BlogPost }
+    comment:  { entity: rs\kaoz4Bundle\Entity\Comment }
+    tag:      { entity: rs\kaoz4Bundle\Entity\Tag }
 
 imports:
     - { resource: "@kaoz4Bundle/Resources/config/menu.xml" }
+    - { resource: "@SonataNewsBundle/Resources/config/news.xml" }
+    - { resource: "@SonataNewsBundle/Resources/config/admin.xml" }
 
 knplabs_menu:
     twig: true

@@ -16,8 +16,9 @@ all:
   - Sonata\jQueryBundle\SonatajQueryBundle
   - Sonata\BluePrintBundle\SonataBluePrintBundle
   - Sonata\AdminBundle\SonataAdminBundle
+  - Sonata\NewsBundle\SonataNewsBundle
   - Knplabs\Bundle\MenuBundle\KnplabsMenuBundle
-  - Bundle\BlogBundle\BlogBundle
+#  - Bundle\BlogBundle\BlogBundle
   
 dev:
   - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle

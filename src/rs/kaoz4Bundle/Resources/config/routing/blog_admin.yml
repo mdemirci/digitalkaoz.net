@@ -1,0 +1,38 @@
+blogpost_admin_create:
+    pattern:  blog_posts/create
+    defaults: { _controller: SonataNewsBundle:PostAdmin:create, _sonata_admin: sonata.news.admin.post }    
+blogpost_admin_list:
+    pattern:  blog_posts
+    defaults: { _controller: SonataNewsBundle:PostAdmin:list, _sonata_admin: sonata.news.admin.post }
+blogpost_admin_batch:
+    pattern:  blog_posts/batch
+    defaults: { _controller: SonataNewsBundle:PostAdmin:batch, _sonata_admin: sonata.news.admin.post }
+blogpost_admin_edit:
+    pattern:  blog_posts/edit/{id}
+    defaults: { _controller: SonataNewsBundle:PostAdmin:edit, _sonata_admin: sonata.news.admin.post }
+    
+tag_admin_create:
+    pattern:  tags/create
+    defaults: { _controller: SonataNewsBundle:TagAdmin:create, _sonata_admin: sonata.news.admin.tag }    
+tag_admin_list:
+    pattern:  tags
+    defaults: { _controller: SonataNewsBundle:TagAdmin:list, _sonata_admin: sonata.news.admin.tag }
+tag_admin_batch:
+    pattern:  tags/batch
+    defaults: { _controller: SonataNewsBundle:TagAdmin:batch, _sonata_admin: sonata.news.admin.tag }
+tag_admin_edit:
+    pattern:  tags/edit/{id}
+    defaults: { _controller: SonataNewsBundle:TagAdmin:edit, _sonata_admin: sonata.news.admin.tag }    
+
+comment_admin_create:
+    pattern:  comments/create
+    defaults: { _controller: SonataNewsBundle:CommentAdmin:create, _sonata_admin: sonata.news.admin.comment }    
+comment_admin_list:
+    pattern:  comments
+    defaults: { _controller: SonataNewsBundle:CommentAdmin:list, _sonata_admin: sonata.news.admin.comment }
+comment_admin_batch:
+    pattern:  comments/batch
+    defaults: { _controller: SonataNewsBundle:CommentAdmin:batch, _sonata_admin: sonata.news.admin.comment }
+comment_admin_edit:
+    pattern:  comments/edit/{id}
+    defaults: { _controller: SonataNewsBundle:CommentAdmin:edit, _sonata_admin: sonata.news.admin.comment }        

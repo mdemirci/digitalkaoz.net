@@ -26,15 +26,16 @@ class MainMenu extends Menu
         
         $this->addChild($github);
         $this->addChild('Wordpress', 'http://digitalkaoz.net');
+        $this->addChild('Admin Dashboard', $router->generate('sonata_admin_dashboard'));                
     }
     
     protected function blogTree(Router $router)
     {
-        $node = $this->createChild('Blog', $router->generate('blog_home'));
+        $node = $this->createChild('Blog', $router->generate('blog'));
         
-        $node->addChild('home',$router->generate('blog_home'));
-        $node->addChild('tags',$router->generate('blog_tags'));
-        $node->addChild('categories',$router->generate('blog_categories'));
+#        $node->addChild('home',$router->generate('blog'));
+        #$node->addChild('archive',$router->generate('blog_archive_monthly'));
+#        $node->addChild('categories',$router->generate('blog_categories'));
         
         return $node;
     }

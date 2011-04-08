@@ -3,5 +3,6 @@ nbproject
 catalog.xml
 
 app/cache/*
+app/config/parameters.ini
 app/logs/*
 web/bundles/*

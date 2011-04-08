@@ -2,9 +2,13 @@ homepage:
     pattern:  /
     defaults: { _controller: kaoz4Bundle:Home:index }
 
-blog:
-    resource: '@BlogBundle/Resources/config/routing.yml'
+dashboard:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
 
-#news:
-#    resource: '@SonataNews/Resources/config/routing/news.xml'
-#    prefix:   /news  
+blog:
+  resource: '@kaoz4Bundle/Resources/config/routing/blog.xml'
+  prefix:   /blog
+
+blog_admin:
+  resource: '@kaoz4Bundle/Resources/config/routing/blog_admin.yml'
+  prefix:   /admin
