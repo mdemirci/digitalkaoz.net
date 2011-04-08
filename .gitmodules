@@ -58,3 +58,6 @@
 [submodule "vendor/bundles/Sonata/NewsBundle"]
 	path = vendor/bundles/Sonata/NewsBundle
 	url = git@github.com:sonata-project/NewsBundle.git
+[submodule "vendor/bundles/FOS/UserBundle"]
+	path = vendor/bundles/FOS/UserBundle
+	url = git://github.com/FriendsOfSymfony/UserBundle.git

@@ -36,3 +36,16 @@ comment_admin_batch:
 comment_admin_edit:
     pattern:  comments/edit/{id}
     defaults: { _controller: SonataNewsBundle:CommentAdmin:edit, _sonata_admin: sonata.news.admin.comment }        
+    
+user_admin_create:
+    pattern:  users/create
+    defaults: { _controller: kaoz4Bundle:UserAdmin:create, _sonata_admin: kaoz4.admin.user }    
+user_admin_list:
+    pattern:  users
+    defaults: { _controller: kaoz4Bundle:UserAdmin:list, _sonata_admin: kaoz4.admin.user }
+user_admin_batch:
+    pattern:  users/batch
+    defaults: { _controller: kaoz4Bundle:UserAdmin:batch, _sonata_admin: kaoz4.admin.user }
+user_admin_edit:
+    pattern:  users/edit/{id}
+    defaults: { _controller: kaoz4Bundle:UserAdmin:edit, _sonata_admin: kaoz4.admin.user }            

@@ -1,6 +1,6 @@
 imports:
-    - { resource: parameters.ini }
-#    - { resource: security.yml }
+    - { resource: "%kernel.root_dir%/config/parameters.ini" }
+    - { resource: "%kernel.root_dir%/config/security.yml" }
     
 framework:
     charset:       UTF-8
@@ -15,6 +15,51 @@ framework:
         default_locale: en
         lifetime:       3600
         auto_start:     true
+        
+security:
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+#    role_hierarchy:
+#        ROLE_ADMIN: ROLE_USER
+#        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        in_memory:
+            users:
+                user: { password: admin, roles: [ 'ROLE_USER' ] }
+                admin: { password: admin, roles: [ 'ROLE_ADMIN' ] }
+        fos_userbundle:
+            id: fos_user.user_manager
+
+    firewalls:
+      
+        dashboard:
+            pattern: /dashboard.*
+            http_basic: true
+
+        admin:
+            pattern: /admin/.*
+            http_basic: true
+            
+        public:
+            pattern:  /.*
+            security: false      
+            
+        profiler:
+            pattern: ^/_profiler
+            security: false
+
+        wdt:
+            pattern: ^/_wdt
+            security: false
+
+
+    access_control:
+#        - { path: /.*, roles: IS_AUTHENTICATED_ANONYMOUSLY}        
+        - { path: /dashboard.*, role: ROLE_ADMIN }
+        - { path: /admin/.*, role: ROLE_ADMIN  } #, requires_channel: https
 #
 #assetic:
 #    debug: %kernel.debug%
@@ -32,26 +77,21 @@ framework:
 #    cache:   { annotations: false }
 
 # AdminBundle
-#services:    
-#   kaoz4.admin.post:
-#      class: rs\kaoz4Bundle\Admin\PostAdmin
-#      tags:
-#        - { name: sonata.admin, manager_type: orm, group: blog, label: post }
-#      arguments: [rs\kaoz4Bundle\Entity\BlogPost, kaoz4Bundle:PostAdmin]
-#      pool: AdminPool
-#   kaoz4.admin.comment:
-#      class: Sonata\NewsBundle\Admin\CommentAdmin
-#      tags:
-#        - { name: sonata.admin, manager_type: orm, group: blog, label: comment }
-#      arguments: [rs\kaoz4Bundle\Entity\Comment, NewsBundle:CommentAdmin]
-#      pool: AdminPool
-#   kaoz4.admin.tag:
-#      class: Sonata\NewsBundle\Admin\TagAdmin
-#      tags:
-#        - { name: sonata.admin, manager_type: orm, group: blog, label: tag }
-#      arguments: [rs\kaoz4Bundle\Entity\Tag, NewsBundle:TagAdmin]
-#      pool: AdminPool
+services:    
+   kaoz4.admin.user:
+      class: rs\kaoz4Bundle\Admin\UserAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: user, label: user }
+      arguments: [rs\kaoz4Bundle\Entity\User, kaoz4Bundle:UserAdmin]
+      pool: AdminPool
           
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    class:
+        model:
+            user: rs\kaoz4Bundle\Entity\User          
+            
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
@@ -62,11 +102,11 @@ doctrine:
    dbal:
        connections:
            default:
-                driver:   %database_driver%
-                host:     %database_host%
-                dbname:   %database_name%
-                user:     %database_user%
-                password: %database_password%
+#                driver:   %database_driver%
+#                host:     %database_host%
+#                dbname:   %database_name%
+#                user:     %database_user%
+#                password: %database_password%
                 logging:  %kernel.debug%
    orm:
        auto_generate_proxy_classes: %kernel.debug%
@@ -74,6 +114,7 @@ doctrine:
            default:
                mappings:
                     SonataNewsBundle: ~
+                    FOSUserBundle: ~
                     kaoz4Bundle: ~
 
 ## Swiftmailer Configuration

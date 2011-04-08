@@ -2,6 +2,7 @@ all:
   - Symfony\Bundle\FrameworkBundle\FrameworkBundle
   - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
   - Symfony\Bundle\TwigBundle\TwigBundle
+  - Symfony\Bundle\SecurityBundle\SecurityBundle
   - Symfony\Bundle\MonologBundle\MonologBundle
   - Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle
 #  - Symfony\Bundle\DoctrineAbstractBundle\DoctrineAbstractBundle
@@ -9,16 +10,16 @@ all:
 #  - Symfony\Bundle\AsseticBundle\AsseticBundle
   - Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle
 #  - Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle
-#  - rs\ProjectUtilitiesBundle\ProjectUtilitiesBundle
 
-  - rs\kaoz4Bundle\kaoz4Bundle
-#  - Sonata\NewsBundle\SonataNewsBundle
   - Sonata\jQueryBundle\SonatajQueryBundle
   - Sonata\BluePrintBundle\SonataBluePrintBundle
   - Sonata\AdminBundle\SonataAdminBundle
   - Sonata\NewsBundle\SonataNewsBundle
   - Knplabs\Bundle\MenuBundle\KnplabsMenuBundle
-#  - Bundle\BlogBundle\BlogBundle
+  - FOS\UserBundle\FOSUserBundle
+
+  - rs\kaoz4Bundle\kaoz4Bundle
+#  - rs\ProjectUtilitiesBundle\ProjectUtilitiesBundle
   
 dev:
   - Symfony\Bundle\WebProfilerBundle\WebProfilerBundle

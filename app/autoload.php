@@ -17,10 +17,10 @@ $loader->registerNamespaces(array(
     
     'Knplabs'                        => __DIR__.'/../vendor/bundles',
     'Sonata'                        => __DIR__.'/../vendor/bundles',
-    'Bundle'                        => __DIR__.'/../src',
+    'FOS' =>                            __DIR__.'/../vendor/bundles',    
     'Sensio'                        => __DIR__.'/../vendor/bundles',
+    
     'rs'                             => __DIR__.'/../src',
-    'Application'                    => __DIR__.'/../src'
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
