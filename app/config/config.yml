@@ -1,7 +1,3 @@
-imports:
-    - { resource: "%kernel.root_dir%/config/parameters.ini" }
-    - { resource: "%kernel.root_dir%/config/security.yml" }
-    
 framework:
     charset:       UTF-8
     error_handler: null
@@ -15,69 +11,18 @@ framework:
         default_locale: en
         lifetime:       3600
         auto_start:     true
-        
-security:
 
-    encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
-
-#    role_hierarchy:
-#        ROLE_ADMIN: ROLE_USER
-#        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
-
-    providers:
-        in_memory:
-            users:
-                user: { password: admin, roles: [ 'ROLE_USER' ] }
-                admin: { password: admin, roles: [ 'ROLE_ADMIN' ] }
-        fos_userbundle:
-            id: fos_user.user_manager
-
-    firewalls:
-      
-        dashboard:
-            pattern: /dashboard.*
-            http_basic: true
-
-        admin:
-            pattern: /admin/.*
-            http_basic: true
-            
-        public:
-            pattern:  /.*
-            security: false      
-            
-        profiler:
-            pattern: ^/_profiler
-            security: false
-
-        wdt:
-            pattern: ^/_wdt
-            security: false
-
-
-    access_control:
-#        - { path: /.*, roles: IS_AUTHENTICATED_ANONYMOUSLY}        
-        - { path: /dashboard.*, role: ROLE_ADMIN }
-        - { path: /admin/.*, role: ROLE_ADMIN  } #, requires_channel: https
-#
 #assetic:
 #    debug: %kernel.debug%
 #    use_controller: false
 #    filters:
 #        cssrewrite: ~
-#        
+        
 #bootstrap: ~
 #project_utilities: ~
 
-#extra.config: ~
-#    router:  { annotations: false }
-#    request: { converters: false }
-#    view:    { annotations: false, manage_null_arguments: false }
-#    cache:   { annotations: false }
-
-# AdminBundle
 services:    
+   # AdminBundles
    kaoz4.admin.user:
       class: rs\kaoz4Bundle\Admin\UserAdmin
       tags:
@@ -102,12 +47,11 @@ doctrine:
    dbal:
        connections:
            default:
-#                driver:   %database_driver%
-#                host:     %database_host%
-#                dbname:   %database_name%
-#                user:     %database_user%
-#                password: %database_password%
-                logging:  %kernel.debug%
+                driver:   %database_driver%
+                host:     %database_host%
+                dbname:   %database_name%
+                user:     %database_user%
+                password: %database_password%
    orm:
        auto_generate_proxy_classes: %kernel.debug%
        entity_managers:
@@ -125,18 +69,22 @@ doctrine:
 #    host:       smtp.gmail.com
 #    username:   xxxxxxxx
 #    password:   xxxxxxxx
+
 sonata_news:
   admin:
     post:     { entity: rs\kaoz4Bundle\Entity\BlogPost }
     comment:  { entity: rs\kaoz4Bundle\Entity\Comment }
     tag:      { entity: rs\kaoz4Bundle\Entity\Tag }
 
-imports:
-    - { resource: "@kaoz4Bundle/Resources/config/menu.xml" }
-    - { resource: "@SonataNewsBundle/Resources/config/news.xml" }
-    - { resource: "@SonataNewsBundle/Resources/config/admin.xml" }
-
 knplabs_menu:
     twig: true
     templating: true
     provider: true
+    
+imports:
+    - { resource: "@kaoz4Bundle/Resources/config/menu.xml" }
+    - { resource: "@SonataNewsBundle/Resources/config/news.xml" }
+    - { resource: "@SonataNewsBundle/Resources/config/admin.xml" }
+    - { resource: "parameters.ini" }
+    - { resource: "security.yml" }
+    
