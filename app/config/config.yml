@@ -22,6 +22,26 @@ framework:
 #project_utilities: ~
 
 services:    
+   sonata.news.admin.comment:
+      class: rs\kaoz4Bundle\Admin\CommentAdmin
+      entity: rs\kaoz4Bundle\Entity\Comment
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: blog, label: comment }
+      arguments: [rs\kaoz4Bundle\Entity\Comment, kaoz4Bundle:CommentAdmin]
+      pool: AdminPool       
+   sonata.news.admin.post:
+      class: rs\kaoz4Bundle\Admin\PostAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: blog, label: post }
+      arguments: [rs\kaoz4Bundle\Entity\BlogPost, kaoz4Bundle:PostAdmin]
+      pool: AdminPool       
+   sonata.news.admin.tag:
+      class: rs\kaoz4Bundle\Admin\TagAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: blog, label: tag }
+      arguments: [rs\kaoz4Bundle\Entity\Tag, kaoz4Bundle:TagAdmin]
+      pool: AdminPool       
+      
    # AdminBundles
    kaoz4.admin.user:
       class: rs\kaoz4Bundle\Admin\UserAdmin
@@ -52,6 +72,7 @@ doctrine:
                 dbname:   %database_name%
                 user:     %database_user%
                 password: %database_password%
+                unix_socket: /opt/local/var/run/mysql5/mysqld.sock
    orm:
        auto_generate_proxy_classes: %kernel.debug%
        entity_managers:
@@ -70,11 +91,11 @@ doctrine:
 #    username:   xxxxxxxx
 #    password:   xxxxxxxx
 
-sonata_news:
-  admin:
-    post:     { entity: rs\kaoz4Bundle\Entity\BlogPost }
-    comment:  { entity: rs\kaoz4Bundle\Entity\Comment }
-    tag:      { entity: rs\kaoz4Bundle\Entity\Tag }
+#sonata_news:
+#  admin:
+#    post:     false #{ entity: rs\kaoz4Bundle\Entity\BlogPost }
+#    comment:  false #{ entity: rs\kaoz4Bundle\Entity\Comment }
+#    tag:      false #{ entity: rs\kaoz4Bundle\Entity\Tag }
 
 knplabs_menu:
     twig: true
@@ -84,7 +105,7 @@ knplabs_menu:
 imports:
     - { resource: "@kaoz4Bundle/Resources/config/menu.xml" }
     - { resource: "@SonataNewsBundle/Resources/config/news.xml" }
-    - { resource: "@SonataNewsBundle/Resources/config/admin.xml" }
+#    - { resource: "@SonataNewsBundle/Resources/config/admin.xml" }
     - { resource: "parameters.ini" }
     - { resource: "security.yml" }
     
