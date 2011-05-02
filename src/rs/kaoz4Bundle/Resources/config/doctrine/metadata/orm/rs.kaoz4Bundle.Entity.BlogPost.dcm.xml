@@ -40,7 +40,7 @@
                 <!--<cascade-refresh />-->
             </cascade>
 
-            <join-table name="blog__post_tag">
+            <join-table name="blog_post_tag">
                 <join-columns>
                     <join-column name="post_id" referenced-column-name="id"/>
                 </join-columns>
@@ -64,7 +64,7 @@
             <join-columns>
                 <join-column
                     name="id"
-                    referenced-column-name="post_id"
+                    referenced-column-name="news_id"
                 />
             </join-columns>
 

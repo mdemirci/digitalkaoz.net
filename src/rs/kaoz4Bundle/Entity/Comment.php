@@ -15,10 +15,9 @@ class Comment extends BaseComment
     private $id;
 
     /**
-     * @var rs\kaoz4Bundle\Entity\BlogPost
+     * @var string $news_class
      */
-    protected $post;
-
+    private $news_class;
 
     /**
      * Get id
@@ -31,22 +30,23 @@ class Comment extends BaseComment
     }
 
     /**
-     * Set post
+     * Set news_class
      *
-     * @param rs\kaoz4Bundle\Entity\BlogPost $post
+     * @param string $newsClass
      */
-    public function setPost($post)
+    public function setNewsClass($newsClass)
     {
-        $this->post = $post;
+        $this->news_class = $newsClass;
     }
 
     /**
-     * Get post
+     * Get news_class
      *
-     * @return rs\kaoz4Bundle\Entity\BlogPost $post
+     * @return string $newsClass
      */
-    public function getPost()
+    public function getNewsClass()
     {
-        return $this->post;
+        return $this->news_class;
     }
+
 }

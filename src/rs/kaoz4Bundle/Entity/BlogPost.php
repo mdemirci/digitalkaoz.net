@@ -45,7 +45,7 @@ class BlogPost extends BasePost
      *
      * @param rs\kaoz4Bundle\Entity\Comment $comments
      */
-    public function addComments($comments)
+    public function addComments( $comments)
     {
         $this->comments[] = $comments;
     }
@@ -65,7 +65,7 @@ class BlogPost extends BasePost
      *
      * @param rs\kaoz4Bundle\Entity\Tag $tags
      */
-    public function addTags($tags)
+    public function addTags( $tags)
     {
         $this->tags[] = $tags;
     }

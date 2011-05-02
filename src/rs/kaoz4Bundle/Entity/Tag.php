@@ -39,7 +39,7 @@ class Tag extends BaseTag
      *
      * @param rs\kaoz4Bundle\Entity\BlogPost $posts
      */
-    public function addPosts($posts)
+    public function addPosts( $posts)
     {
         $this->posts[] = $posts;
     }
