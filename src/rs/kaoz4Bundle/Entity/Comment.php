@@ -39,15 +39,11 @@ class Comment
     private $deleted_at;
         
     /**
-     * @orm:ManyToMany(targetEntity="BaseContent", mappedBy="tags")
+     * @orm:ManyToOne(targetEntity="BaseContent", inversedBy="comment")
      */
-    private $contents;
+    private $content;
         
-    public function __construct()
-    {
-        $this->contents = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
+
     /**
      * Get id
      *
@@ -179,22 +175,22 @@ class Comment
     }
 
     /**
-     * Add contents
+     * Set content
      *
-     * @param rs\kaoz4Bundle\Entity\BaseContent $contents
+     * @param rs\kaoz4Bundle\Entity\BaseContent $content
      */
-    public function addContents(\rs\kaoz4Bundle\Entity\BaseContent $contents)
+    public function setContent(\rs\kaoz4Bundle\Entity\BaseContent $content)
     {
-        $this->contents[] = $contents;
+        $this->content = $content;
     }
 
     /**
-     * Get contents
+     * Get content
      *
-     * @return Doctrine\Common\Collections\Collection $contents
+     * @return rs\kaoz4Bundle\Entity\BaseContent $content
      */
-    public function getContents()
+    public function getContent()
     {
-        return $this->contents;
+        return $this->content;
     }
 }
