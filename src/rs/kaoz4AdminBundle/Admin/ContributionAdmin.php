@@ -14,5 +14,18 @@ namespace rs\kaoz4AdminBundle\Admin;
 class ContributionAdmin extends BaseContentAdmin
 {
     protected $baseRouteName = "contribution_admin";
+
+    protected $form = array(
+        #'author' => array('type'=>'choice','choices'=>array('foo','bar')),
+        'enabled' => array('form_field_options' => array('required' => false)),
+        'url',
+        'title',
+        'abstract',
+        'content',
+        'tags'     => array('edit' => 'list','form_field_options' => array('expanded'=>true)),
+#        'commentsCloseAt',
+        'comments_enabled' => array('form_field_options' => array('required' => false)),
+        'tags_enabled' => array('form_field_options' => array('required' => false)),
+    );
     
 }
