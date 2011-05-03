@@ -13,13 +13,18 @@ use rs\kaoz4Bundle\Entity\Comment;
 
 class BlogController extends Controller
 {
+    
     protected $class = 'rs\kaoz4Bundle\Entity\Post';
     protected $list_limit = 10;
     
     protected function getRepository()
     {
-        return $this->get('doctrine.orm.entity_manager')
-            ->getRepository($this->class);
+        return $this->em()->getRepository($this->class);
+    }
+    
+    protected function em()
+    {
+        return $this->get('doctrine.orm.entity_manager');
     }
     
     /**
@@ -62,17 +67,7 @@ class BlogController extends Controller
 
         $em = $this->get('doctrine.orm.entity_manager');
 
-        $comments = $em->getRepository('rs\kaoz4Bundle\Entity\Comment')
-            ->createQueryBuilder('c')
-            ->where('c.content = :post_id')
-            ->orderBy('c.created_at', 'ASC')
-            ->getQuery()
-            ->setParameters(array(
-                'post_id'   => $post_id,
-//                'status'    => Comment::STATUS_VALID,
-            ))
-            ->execute();
-
+        $comments = $this->em()->getRepository('rs\kaoz4Bundle\Entity\Comment')->findByPost($post_id);
 
         return $this->render('kaoz4Bundle:Blog:comments.html.twig', array(
             'comments'  => $comments,
