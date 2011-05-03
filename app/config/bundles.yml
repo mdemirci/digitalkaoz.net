@@ -1,20 +1,19 @@
 all:
   - Symfony\Bundle\FrameworkBundle\FrameworkBundle
-  - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
   - Symfony\Bundle\TwigBundle\TwigBundle
   - Symfony\Bundle\SecurityBundle\SecurityBundle
   - Symfony\Bundle\MonologBundle\MonologBundle
   - Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle
-#  - Symfony\Bundle\DoctrineAbstractBundle\DoctrineAbstractBundle
   - Symfony\Bundle\DoctrineBundle\DoctrineBundle  
+#  - Symfony\Bundle\DoctrineAbstractBundle\DoctrineAbstractBundle
 #  - Symfony\Bundle\AsseticBundle\AsseticBundle
-  - Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle
+#  - Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle
 #  - Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle
+  - Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle
 
   - Sonata\jQueryBundle\SonatajQueryBundle
   - Sonata\BluePrintBundle\SonataBluePrintBundle
   - Sonata\AdminBundle\SonataAdminBundle
-  - Sonata\NewsBundle\SonataNewsBundle
   - Knplabs\Bundle\MenuBundle\KnplabsMenuBundle
   - FOS\UserBundle\FOSUserBundle
 

@@ -2,26 +2,29 @@
 
 namespace rs\kaoz4Bundle\Entity;
 
-use Sonata\NewsBundle\Entity\BaseTag;
-
 /**
- * rs\kaoz4Bundle\Entity\Tag
+ * @orm:Entity
  */
-class Tag extends BaseTag
+class Tag
 {
     /**
-     * @var integer $id
+     * @orm:Id
+     * @orm:Column(type="integer")
+     * @orm:GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /** @orm:Column(type="string") */
+    private $name;
+    
     /**
-     * @var rs\kaoz4Bundle\Entity\BlogPost
+     * @orm:ManyToMany(targetEntity="BaseContent", mappedBy="tags")
      */
-    protected $posts;
-
+    private $contents;
+    
     public function __construct()
     {
-        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->contents = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -35,22 +38,52 @@ class Tag extends BaseTag
     }
 
     /**
-     * Add posts
+     * Set name
      *
-     * @param rs\kaoz4Bundle\Entity\BlogPost $posts
+     * @param string $name
      */
-    public function addPosts( $posts)
+    public function setName($name)
     {
-        $this->posts[] = $posts;
+        $this->name = $name;
     }
 
     /**
-     * Get posts
+     * Get name
      *
-     * @return Doctrine\Common\Collections\Collection $posts
+     * @return string $name
      */
-    public function getPosts()
+    public function getName()
     {
-        return $this->posts;
+        return $this->name;
+    }
+
+    /**
+     * Add a content
+     *
+     * @param rs\kaoz4Bundle\Entity\BaseContent $content
+     */
+    public function addContent(\rs\kaoz4Bundle\Entity\BaseContent $content)
+    {
+        $this->contents[] = $content;
+    }
+
+    /**
+     * Get contents
+     *
+     * @return Doctrine\Common\Collections\Collection $contents
+     */
+    public function getContents()
+    {
+        return $this->contents;
+    }
+
+    /**
+     * Add contents
+     *
+     * @param rs\kaoz4Bundle\Entity\BaseContent $contents
+     */
+    public function addContents(\rs\kaoz4Bundle\Entity\BaseContent $contents)
+    {
+        $this->contents[] = $contents;
     }
 }

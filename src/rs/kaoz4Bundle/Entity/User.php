@@ -5,12 +5,14 @@ namespace rs\kaoz4Bundle\Entity;
 use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
- * rs\kaoz4Bundle\Entity\User
+ * @orm:Entity
  */
 class User extends BaseUser
 {
     /**
-     * @var integer $id
+     * @orm:Id
+     * @orm:Column(type="integer")
+     * @orm:GeneratedValue(strategy="AUTO")
      */
     protected $id;
 

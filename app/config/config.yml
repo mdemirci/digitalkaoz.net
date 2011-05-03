@@ -1,9 +1,7 @@
 framework:
     charset:       UTF-8
     error_handler: null
-    csrf_protection:
-        enabled: true
-        secret: xxxxxxxxxx
+    secret: xxxxxxxxxx
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
     validation:    { enabled: true, annotations: true }
     templating:    { engines: ['twig'] } #assets_version: SomeVersionScheme
@@ -22,40 +20,41 @@ framework:
 #project_utilities: ~
 
 services:    
-   sonata.news.admin.comment:
-      class: rs\kaoz4Bundle\Admin\CommentAdmin
-      entity: rs\kaoz4Bundle\Entity\Comment
-      tags:
-        - { name: sonata.admin, manager_type: orm, group: blog, label: comment }
-      arguments: [rs\kaoz4Bundle\Entity\Comment, kaoz4Bundle:CommentAdmin]
-      pool: AdminPool       
-   sonata.news.admin.post:
-      class: rs\kaoz4Bundle\Admin\PostAdmin
-      tags:
-        - { name: sonata.admin, manager_type: orm, group: blog, label: post }
-      arguments: [rs\kaoz4Bundle\Entity\BlogPost, kaoz4Bundle:PostAdmin]
-      pool: AdminPool       
-   sonata.news.admin.tag:
+#   sonata.news.admin.comment:
+#      class: rs\kaoz4Bundle\Admin\CommentAdmin
+#      entity: rs\kaoz4Bundle\Entity\Comment
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, group: blog, label: comment }
+#      arguments: [rs\kaoz4Bundle\Entity\Comment, kaoz4Bundle:CommentAdmin]
+#      pool: AdminPool       
+#   sonata.news.admin.post:
+#      class: rs\kaoz4Bundle\Admin\PostAdmin
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, group: blog, label: post }
+#      arguments: [rs\kaoz4Bundle\Entity\Post, kaoz4Bundle:PostAdmin]
+#      pool: AdminPool       
+
+    kaoz4.admin.tag:
       class: rs\kaoz4Bundle\Admin\TagAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: blog, label: tag }
-      arguments: [rs\kaoz4Bundle\Entity\Tag, kaoz4Bundle:TagAdmin]
+      arguments: [null, rs\kaoz4Bundle\Entity\Tag, kaoz4Bundle:TagAdmin]
       pool: AdminPool       
       
    # AdminBundles
-   kaoz4.admin.user:
-      class: rs\kaoz4Bundle\Admin\UserAdmin
-      tags:
-        - { name: sonata.admin, manager_type: orm, group: user, label: user }
-      arguments: [rs\kaoz4Bundle\Entity\User, kaoz4Bundle:UserAdmin]
-      pool: AdminPool
+#   kaoz4.admin.user:
+#      class: rs\kaoz4Bundle\Admin\UserAdmin
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, group: user, label: user }
+#      arguments: [rs\kaoz4Bundle\Entity\User, kaoz4Bundle:UserAdmin]
+#      pool: AdminPool
           
 fos_user:
     db_driver: orm
     firewall_name: main
     class:
         model:
-            user: rs\kaoz4Bundle\Entity\User          
+            user: rs\kaoz4Bundle\Entity\User     
             
 # Twig Configuration
 twig:
@@ -78,9 +77,9 @@ doctrine:
        entity_managers:
            default:
                mappings:
-                    SonataNewsBundle: ~
+#                    SonataNewsBundle: ~
                     FOSUserBundle: ~
-                    kaoz4Bundle: ~
+                    kaoz4Bundle: { type: annotation }
 
 ## Swiftmailer Configuration
 #swiftmailer:
@@ -104,7 +103,7 @@ knplabs_menu:
     
 imports:
     - { resource: "@kaoz4Bundle/Resources/config/menu.xml" }
-    - { resource: "@SonataNewsBundle/Resources/config/news.xml" }
+#    - { resource: "@SonataNewsBundle/Resources/config/news.xml" }
 #    - { resource: "@SonataNewsBundle/Resources/config/admin.xml" }
     - { resource: "parameters.ini" }
     - { resource: "security.yml" }

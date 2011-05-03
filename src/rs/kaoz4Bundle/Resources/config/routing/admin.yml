@@ -1,0 +1,54 @@
+blogpost_admin_create:
+    pattern:  blog_posts/create
+    defaults: { _controller: kaoz4Bundle:PostAdmin:create, _sonata_admin: kaoz4.admin.post }    
+blogpost_admin_list:
+    pattern:  blog_posts
+    defaults: { _controller: kaoz4Bundle:PostAdmin:list, _sonata_admin: kaoz4.admin.post }
+blogpost_admin_batch:
+    pattern:  blog_posts/batch
+    defaults: { _controller: kaoz4Bundle:PostAdmin:batch, _sonata_admin: kaoz4.admin.post }
+blogpost_admin_edit:
+    pattern:  blog_posts/edit/{id}
+    defaults: { _controller: kaoz4Bundle:PostAdmin:edit, _sonata_admin: kaoz4.admin.post }
+blogpost_admin_comments:
+    pattern:  comments
+    defaults: { _controller: kaoz4Bundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
+    
+tag_admin_create:
+    pattern:  tags/create
+    defaults: { _controller: kaoz4Bundle:TagAdmin:create, _sonata_admin: kaoz4.admin.tag }    
+tag_admin_list:
+    pattern:  tags
+    defaults: { _controller: kaoz4Bundle:TagAdmin:list, _sonata_admin: kaoz4.admin.tag }
+tag_admin_batch:
+    pattern:  tags/batch
+    defaults: { _controller: kaoz4Bundle:TagAdmin:batch, _sonata_admin: kaoz4.admin.tag }
+tag_admin_edit:
+    pattern:  tags/edit/{id}
+    defaults: { _controller: kaoz4Bundle:TagAdmin:edit, _sonata_admin: kaoz4.admin.tag }    
+
+comment_admin_create:
+    pattern:  comments/create
+    defaults: { _controller: kaoz4Bundle:CommentAdmin:create, _sonata_admin: kaoz4.admin.comment }    
+comment_admin_list:
+    pattern:  comments
+    defaults: { _controller: kaoz4Bundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
+comment_admin_batch:
+    pattern:  comments/batch
+    defaults: { _controller: kaoz4Bundle:CommentAdmin:batch, _sonata_admin: kaoz4.admin.comment }
+comment_admin_edit:
+    pattern:  comments/edit/{id}
+    defaults: { _controller: kaoz4Bundle:CommentAdmin:edit, _sonata_admin: kaoz4.admin.comment }        
+    
+user_admin_create:
+    pattern:  users/create
+    defaults: { _controller: kaoz4Bundle:UserAdmin:create, _sonata_admin: kaoz4.admin.user }    
+user_admin_list:
+    pattern:  users
+    defaults: { _controller: kaoz4Bundle:UserAdmin:list, _sonata_admin: kaoz4.admin.user }
+user_admin_batch:
+    pattern:  users/batch
+    defaults: { _controller: kaoz4Bundle:UserAdmin:batch, _sonata_admin: kaoz4.admin.user }
+user_admin_edit:
+    pattern:  users/edit/{id}
+    defaults: { _controller: kaoz4Bundle:UserAdmin:edit, _sonata_admin: kaoz4.admin.user }            

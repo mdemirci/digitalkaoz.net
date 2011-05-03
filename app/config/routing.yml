@@ -9,8 +9,8 @@ blog:
   resource: '@kaoz4Bundle/Resources/config/routing/blog.xml'
   prefix:   /blog
 
-blog_admin:
-  resource: '@kaoz4Bundle/Resources/config/routing/blog_admin.yml'
+admin:
+  resource: '@kaoz4Bundle/Resources/config/routing/admin.yml'
   prefix:   /admin
 
 fos_user_security:

@@ -30,18 +30,18 @@ class TagAdmin extends Admin
     
     protected $list = array(
         'name' => array('identifier' => true,'type'=>'string'),
-        'enabled'=> array('type'=>'boolean'),
+#        'enabled'=> array('type'=>'boolean'),
     );
 
     protected $form = array(
         'id',
         'name' => array('type' => 'string'), 
-        'enabled' => array('type'=>'boolean', 'form_field_options' => array('required' => false))
+#        'enabled' => array('type'=>'boolean', 'form_field_options' => array('required' => false))
     );
     
     protected $formGroups = array(
         'General' => array(
-            'fields' => array('name', 'enabled')
+            'fields' => array('name')
         )
     );
 
