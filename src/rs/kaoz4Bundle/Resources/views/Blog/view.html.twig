@@ -11,20 +11,18 @@
     </div>
 
 
-    {% render 'kaoz4Bundle:Blog:comments' with {
-        'post_id': post.id
-    } %}
+    {% render 'kaoz4Bundle:Blog:comments' with { 'post_id': post.id } %}
 
-    {% if post.iscommentable %}
+<!--    {% if post.commentsEnabled %}
         {% render 'kaoz4Bundle:Blog:addCommentForm' with {
             'post_id': post.id,
             'form': form
         } %}
     {% else %}
         <div>
-            {% trans 'message_comments_are_closed' from 'NewsBundle' %}
+            {% trans %}message_comments_are_closed{% endtrans %}
         </div>
-    {% endif %}
+    {% endif %}-->
 {% endblock %}
 
 {% block sidebar %}

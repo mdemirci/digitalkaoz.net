@@ -3,12 +3,28 @@
 namespace rs\kaoz4Bundle\Entity;
 
 /**
- * @orm:Entity
+ * @orm:Entity(repositoryClass="rs\kaoz4Bundle\Entity\BaseContentRepository")
  */
 class Contribution extends BaseContent
-{    
+{        
+    /**
+     * @orm:Id
+     * @orm:Column(type="integer")
+     */
+    private $id;
+    
     /** @orm:Column(type="string", nullable=true) */
     private $url;
+    
+    /**
+     * Get id
+     *
+     * @return integer $id
+     */
+    public function getId()
+    {
+        return parent::getId();
+    }
     
     /**
      * Set url
@@ -28,5 +44,15 @@ class Contribution extends BaseContent
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 }

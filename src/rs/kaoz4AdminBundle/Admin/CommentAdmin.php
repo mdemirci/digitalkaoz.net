@@ -28,7 +28,7 @@ class CommentAdmin extends Admin
         'name' => array('identifier'=>true  ),
 #        'post' => array('type'=>'string'),
         'email',
-        'homepage',
+#        'homepage',
         'text',
         'enabled',
         'created_at'
@@ -39,6 +39,7 @@ class CommentAdmin extends Admin
         'email',
         'homepage' => array('required'=>false),
         'text',
+        'homepage',
         'enabled'
 #        'post' => array('edit' => 'list'),
 #        'status' => array('type' => 'choice'),

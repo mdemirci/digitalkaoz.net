@@ -6,7 +6,7 @@ dashboard:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
 
 blog:
-  resource: '@kaoz4Bundle/Resources/config/routing/blog.xml'
+  resource: '@kaoz4Bundle/Resources/config/routing/blog.yml'
   prefix:   /blog
 
 admin:

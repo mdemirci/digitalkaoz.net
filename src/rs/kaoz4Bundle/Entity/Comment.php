@@ -49,7 +49,7 @@ class Comment
     private $deleted_at;
         
     /**
-     * @orm:ManyToOne(targetEntity="BaseContent", inversedBy="comment")
+     * @orm:ManyToOne(targetEntity="BaseContent", inversedBy="comments")
      */
     private $content;
         

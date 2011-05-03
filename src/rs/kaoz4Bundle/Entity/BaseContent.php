@@ -3,15 +3,14 @@
 namespace rs\kaoz4Bundle\Entity;
 
 /**
- * @orm:Entity
+ * @orm:Entity(repositoryClass="rs\kaoz4Bundle\Entity\BaseContentRepository")
  * @orm:InheritanceType("JOINED")
  * @orm:DiscriminatorColumn(name="discr", type="string")
  * @orm:DiscriminatorMap({"post" = "Post", "contribution" = "Contribution", "news" = "News" })
  * @orm:HasLifecycleCallbacks
  */
 class BaseContent
-{
-    
+{    
     /**
      * @orm:Id
      * @orm:Column(type="integer")
@@ -410,4 +409,20 @@ class BaseContent
     {
         return $id;
     }
+    
+    public function getYear()
+    {
+        return $this->getCreatedAt()->format('Y');
+    }
+
+    public function getMonth()
+    {
+        return $this->getCreatedAt()->format('m');
+    }
+
+    public function getDay()
+    {
+        return $this->getCreatedAt()->format('d');
+    }
+
 }

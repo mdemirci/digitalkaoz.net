@@ -1,0 +1,8 @@
+blog:
+    pattern:  /
+    defaults: { _controller: kaoz4Bundle:Blog:archive }    
+
+blog_view:
+    pattern:  /{year}/{month}/{day}/{slug}
+    defaults: { _controller: kaoz4Bundle:Blog:view }    
+    

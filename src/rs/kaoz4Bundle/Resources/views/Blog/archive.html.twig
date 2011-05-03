@@ -1,7 +1,7 @@
 {% extends "kaoz4Bundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>{% trans 'title_archive' from 'NewsBundle' %}</h1>
+    <h1>{% trans %}title_archive{% endtrans %}</h1>
 
     {% for post in pager.getResults() %}
         <div>
@@ -16,4 +16,3 @@
 {% block sidebar %}
         {{ menu('main') }}
 {% endblock %}
-

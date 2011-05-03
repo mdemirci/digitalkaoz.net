@@ -11,13 +11,13 @@
 
 #}
 
-<h2>{% trans 'title_comments' from 'NewsBundle' %}</h2>
+<h2>{% trans %}title_comments{% endtrans %}</h2>
 
 {% for comment in comments %}
     <div>
-        <a href="{{ comment.url }}" target="new" rel="nofollow">{{ comment.name }}</a>
+        <a href="{{ comment.homepage }}" target="new" rel="nofollow">{{ comment.name }}</a>
         <div>
-            {{ comment.message }}
+            {{ comment.text }}
         </div>
     </div>
 {% endfor %}
