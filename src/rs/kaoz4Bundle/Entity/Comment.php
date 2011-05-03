@@ -25,12 +25,21 @@ class Comment
 
     /** @orm:Column(type="text") */
     private $text;
+
+    /** @orm:Column(type="boolean") */
+    private $enabled;
     
     /** 
      * @orm:Column(type="datetime") 
      * @todo doctrine extension
      */
     private $created_at;
+
+    /** 
+     * @orm:Column(type="datetime") 
+     * @todo doctrine extension
+     */
+    private $updated_at;
     
     /** 
      * @orm:Column(type="datetime") 
@@ -182,8 +191,48 @@ class Comment
     public function setContent(\rs\kaoz4Bundle\Entity\BaseContent $content)
     {
         $this->content = $content;
+    }    
+
+    /**
+     * Set enabled
+     *
+     * @param boolean $enabled
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
     }
 
+    /**
+     * Get enabled
+     *
+     * @return boolean $enabled
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * Set updated_at
+     *
+     * @param datetime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+    }
+
+    /**
+     * Get updated_at
+     *
+     * @return datetime $updatedAt
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+    
     /**
      * Get content
      *
@@ -192,5 +241,32 @@ class Comment
     public function getContent()
     {
         return $this->content;
+    }
+
+    public function enable()
+    {
+        $this->setEnabled(true);
+    }
+    
+    public function disable()
+    {
+        $this->setEnabled(false);
+    }
+    
+    /**
+     * @orm:PrePersist
+     */
+    public function prePersist()
+    {
+        $this->setCreatedAt(new \DateTime);
+        $this->setUpdatedAt(new \DateTime);
+    }
+
+    /**
+     * @orm:PreUpdate
+     */
+    public function preUpdate()
+    {
+        $this->setUpdatedAt(new \DateTime);
     }
 }

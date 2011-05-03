@@ -20,34 +20,47 @@ framework:
 #project_utilities: ~
 
 services:    
-#   sonata.news.admin.comment:
-#      class: rs\kaoz4Bundle\Admin\CommentAdmin
-#      entity: rs\kaoz4Bundle\Entity\Comment
-#      tags:
-#        - { name: sonata.admin, manager_type: orm, group: blog, label: comment }
-#      arguments: [rs\kaoz4Bundle\Entity\Comment, kaoz4Bundle:CommentAdmin]
-#      pool: AdminPool       
    kaoz4.admin.post:
       class: rs\kaoz4Bundle\Admin\PostAdmin
       tags:
-        - { name: sonata.admin, manager_type: orm, group: blog, label: post }
+        - { name: sonata.admin, manager_type: orm, group: Contents, label: Posts }
       arguments: [null, rs\kaoz4Bundle\Entity\Post, kaoz4Bundle:PostAdmin]
       pool: AdminPool       
 
    kaoz4.admin.tag:
       class: rs\kaoz4Bundle\Admin\TagAdmin
       tags:
-        - { name: sonata.admin, manager_type: orm, group: blog, label: tag }
+        - { name: sonata.admin, manager_type: orm, group: Attachments, label: Tags }
       arguments: [null, rs\kaoz4Bundle\Entity\Tag, kaoz4Bundle:TagAdmin]
       pool: AdminPool       
+
+   kaoz4.admin.tag:
+      class: rs\kaoz4Bundle\Admin\CommentAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Attachments, label: Comments }
+      arguments: [null, rs\kaoz4Bundle\Entity\Comment, kaoz4Bundle:CommentAdmin]
+      pool: AdminPool       
+
+   kaoz4.admin.contribution:
+      class: rs\kaoz4Bundle\Admin\ContributionAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Contents, label: Contributions }
+      arguments: [null, rs\kaoz4Bundle\Entity\Contribution, kaoz4Bundle:ContributionAdmin]
+      pool: AdminPool       
+
+   kaoz4.admin.news:
+      class: rs\kaoz4Bundle\Admin\NewsAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Contents, label: News }
+      arguments: [null, rs\kaoz4Bundle\Entity\News, kaoz4Bundle:NewsAdmin]
+      pool: AdminPool       
       
-   # AdminBundles
-#   kaoz4.admin.user:
-#      class: rs\kaoz4Bundle\Admin\UserAdmin
-#      tags:
-#        - { name: sonata.admin, manager_type: orm, group: user, label: user }
-#      arguments: [rs\kaoz4Bundle\Entity\User, kaoz4Bundle:UserAdmin]
-#      pool: AdminPool
+   kaoz4.admin.user:
+      class: rs\kaoz4Bundle\Admin\UserAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Credentials, label: User }
+      arguments: [null, rs\kaoz4Bundle\Entity\User, kaoz4Bundle:UserAdmin]
+      pool: AdminPool
           
 fos_user:
     db_driver: orm
@@ -80,6 +93,10 @@ doctrine:
 #                    SonataNewsBundle: ~
                     FOSUserBundle: ~
                     kaoz4Bundle: { type: annotation }
+
+sonata_admin:
+  templates:
+    ajax: SonataAdminBundle::ajax_layout.html.twig
 
 ## Swiftmailer Configuration
 #swiftmailer:

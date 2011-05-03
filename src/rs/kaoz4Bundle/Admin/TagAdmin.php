@@ -22,7 +22,6 @@ use Knplabs\Bundle\MenuBundle\MenuItem;
 class TagAdmin extends Admin
 {
     protected $baseRouteName = "tag_admin";
-    protected $baseRoutePattern = "tag";
 
     protected $formOptions = array(
         'validation_groups' => 'admin'

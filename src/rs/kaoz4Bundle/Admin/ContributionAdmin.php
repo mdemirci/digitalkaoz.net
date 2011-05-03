@@ -11,8 +11,8 @@
 
 namespace rs\kaoz4Bundle\Admin;
 
-class PostAdmin extends BaseContentAdmin
+class ContributionAdmin extends BaseContentAdmin
 {
-    protected $baseRouteName = "post_admin";
+    protected $baseRouteName = "contribution_admin";
     
 }

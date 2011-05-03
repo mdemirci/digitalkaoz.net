@@ -1,16 +1,48 @@
-blogpost_admin_create:
-    pattern:  blog_posts/create
+post_admin_create:
+    pattern:  post/create
     defaults: { _controller: kaoz4Bundle:PostAdmin:create, _sonata_admin: kaoz4.admin.post }    
-blogpost_admin_list:
-    pattern:  blog_posts
+post_admin_list:
+    pattern:  post
     defaults: { _controller: kaoz4Bundle:PostAdmin:list, _sonata_admin: kaoz4.admin.post }
-blogpost_admin_batch:
-    pattern:  blog_posts/batch
+post_admin_batch:
+    pattern:  post/batch
     defaults: { _controller: kaoz4Bundle:PostAdmin:batch, _sonata_admin: kaoz4.admin.post }
-blogpost_admin_edit:
-    pattern:  blog_posts/edit/{id}
+post_admin_edit:
+    pattern:  post/edit/{id}
     defaults: { _controller: kaoz4Bundle:PostAdmin:edit, _sonata_admin: kaoz4.admin.post }
-blogpost_admin_comments:
+post_admin_comments:
+    pattern:  comments
+    defaults: { _controller: kaoz4Bundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
+
+news_admin_create:
+    pattern:  news/create
+    defaults: { _controller: kaoz4Bundle:NewsAdmin:create, _sonata_admin: kaoz4.admin.news }    
+news_admin_list:
+    pattern:  news
+    defaults: { _controller: kaoz4Bundle:NewsAdmin:list, _sonata_admin: kaoz4.admin.news }
+news_admin_batch:
+    pattern:  news/batch
+    defaults: { _controller: kaoz4Bundle:NewsAdmin:batch, _sonata_admin: kaoz4.admin.news }
+news_admin_edit:
+    pattern:  news/edit/{id}
+    defaults: { _controller: kaoz4Bundle:NewsAdmin:edit, _sonata_admin: kaoz4.admin.news }
+news_admin_comments:
+    pattern:  comments
+    defaults: { _controller: kaoz4Bundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
+
+contribution_admin_create:
+    pattern:  contribution/create
+    defaults: { _controller: kaoz4Bundle:ContributionAdmin:create, _sonata_admin: kaoz4.admin.contribution }    
+contribution_admin_list:
+    pattern:  contribution
+    defaults: { _controller: kaoz4Bundle:ContributionAdmin:list, _sonata_admin: kaoz4.admin.contribution }
+contribution_admin_batch:
+    pattern:  contribution/batch
+    defaults: { _controller: kaoz4Bundle:ContributionAdmin:batch, _sonata_admin: kaoz4.admin.contribution }
+contribution_admin_edit:
+    pattern:  contribution/edit/{id}
+    defaults: { _controller: kaoz4Bundle:ContributionAdmin:edit, _sonata_admin: kaoz4.admin.contribution }
+contribution_admin_comments:
     pattern:  comments
     defaults: { _controller: kaoz4Bundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
     

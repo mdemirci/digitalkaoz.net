@@ -7,6 +7,7 @@ namespace rs\kaoz4Bundle\Entity;
  * @orm:InheritanceType("JOINED")
  * @orm:DiscriminatorColumn(name="discr", type="string")
  * @orm:DiscriminatorMap({"post" = "Post", "contribution" = "Contribution", "news" = "News" })
+ * @orm:HasLifecycleCallbacks
  */
 class BaseContent
 {
@@ -17,6 +18,12 @@ class BaseContent
      * @orm:GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /** 
+     * @orm:Column(type="string", unique=true) 
+     * @orm:Index
+     */
+    private $slug;
     
     /** @orm:Column(type="string") */
     private $title;
@@ -44,6 +51,12 @@ class BaseContent
     
     /** 
      * @orm:Column(type="datetime") 
+     * @todo doctrine extension
+     */
+    private $updated_at;
+    
+    /** 
+     * @orm:Column(type="datetime", nullable=true) 
      * @todo doctrine extension
      */
     private $deleted_at;
@@ -244,6 +257,26 @@ class BaseContent
     }
 
     /**
+     * Set updated_at
+     *
+     * @param datetime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+    }
+
+    /**
+     * Get updated_at
+     *
+     * @return datetime $updatedAt
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+    
+    /**
      * Set deleted_at
      *
      * @param datetime $deletedAt
@@ -301,5 +334,80 @@ class BaseContent
     public function disable()
     {
         $this->setEnabled(false);
+    }
+
+    /**
+     * @orm:PrePersist
+     */
+    public function prePersist()
+    {
+        $this->setCreatedAt(new \DateTime);
+        $this->setUpdatedAt(new \DateTime);
+        $this->setSlug($this->sluggify());
+    }
+    
+    public function sluggify()
+    {
+        $text = $this->getTitle();
+        
+        // replace non letter or digits by -
+        $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
+
+        // trim
+        $text = trim($text, '-');
+
+        // transliterate
+        if (function_exists('iconv'))
+        {
+        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+        }
+
+        // lowercase
+        $text = strtolower($text);
+
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '', $text);
+
+        if (empty($text))
+        {
+        return 'n-a';
+        }
+
+        return $text;
+    }
+
+    /**
+     * @orm:PreUpdate
+     */
+    public function preUpdate()
+    {
+        $this->setUpdatedAt(new \DateTime);
+        $this->setSlug($this->sluggify());
+    }
+    
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string $slug
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+    
+    public function __toString()
+    {
+        return $id;
     }
 }

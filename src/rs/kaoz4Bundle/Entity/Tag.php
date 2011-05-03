@@ -27,6 +27,11 @@ class Tag
         $this->contents = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+    public function __toString()
+    {
+        return $this->getName();
+    }
+    
     /**
      * Get id
      *
