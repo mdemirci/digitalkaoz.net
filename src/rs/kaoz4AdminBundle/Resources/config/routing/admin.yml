@@ -1,0 +1,86 @@
+post_admin_create:
+    pattern:  post/create
+    defaults: { _controller: kaoz4AdminBundle:PostAdmin:create, _sonata_admin: kaoz4.admin.post }    
+post_admin_list:
+    pattern:  post
+    defaults: { _controller: kaoz4AdminBundle:PostAdmin:list, _sonata_admin: kaoz4.admin.post }
+post_admin_batch:
+    pattern:  post/batch
+    defaults: { _controller: kaoz4AdminBundle:PostAdmin:batch, _sonata_admin: kaoz4.admin.post }
+post_admin_edit:
+    pattern:  post/edit/{id}
+    defaults: { _controller: kaoz4AdminBundle:PostAdmin:edit, _sonata_admin: kaoz4.admin.post }
+post_admin_comments:
+    pattern:  comments
+    defaults: { _controller: kaoz4AdminBundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
+
+news_admin_create:
+    pattern:  news/create
+    defaults: { _controller: kaoz4AdminBundle:NewsAdmin:create, _sonata_admin: kaoz4.admin.news }    
+news_admin_list:
+    pattern:  news
+    defaults: { _controller: kaoz4AdminBundle:NewsAdmin:list, _sonata_admin: kaoz4.admin.news }
+news_admin_batch:
+    pattern:  news/batch
+    defaults: { _controller: kaoz4AdminBundle:NewsAdmin:batch, _sonata_admin: kaoz4.admin.news }
+news_admin_edit:
+    pattern:  news/edit/{id}
+    defaults: { _controller: kaoz4AdminBundle:NewsAdmin:edit, _sonata_admin: kaoz4.admin.news }
+news_admin_comments:
+    pattern:  comments
+    defaults: { _controller: kaoz4AdminBundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
+
+contribution_admin_create:
+    pattern:  contribution/create
+    defaults: { _controller: kaoz4AdminBundle:ContributionAdmin:create, _sonata_admin: kaoz4.admin.contribution }    
+contribution_admin_list:
+    pattern:  contribution
+    defaults: { _controller: kaoz4AdminBundle:ContributionAdmin:list, _sonata_admin: kaoz4.admin.contribution }
+contribution_admin_batch:
+    pattern:  contribution/batch
+    defaults: { _controller: kaoz4AdminBundle:ContributionAdmin:batch, _sonata_admin: kaoz4.admin.contribution }
+contribution_admin_edit:
+    pattern:  contribution/edit/{id}
+    defaults: { _controller: kaoz4AdminBundle:ContributionAdmin:edit, _sonata_admin: kaoz4.admin.contribution }
+contribution_admin_comments:
+    pattern:  comments
+    defaults: { _controller: kaoz4AdminBundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
+    
+tag_admin_create:
+    pattern:  tags/create
+    defaults: { _controller: kaoz4AdminBundle:TagAdmin:create, _sonata_admin: kaoz4.admin.tag }    
+tag_admin_list:
+    pattern:  tags
+    defaults: { _controller: kaoz4AdminBundle:TagAdmin:list, _sonata_admin: kaoz4.admin.tag }
+tag_admin_batch:
+    pattern:  tags/batch
+    defaults: { _controller: kaoz4AdminBundle:TagAdmin:batch, _sonata_admin: kaoz4.admin.tag }
+tag_admin_edit:
+    pattern:  tags/edit/{id}
+    defaults: { _controller: kaoz4AdminBundle:TagAdmin:edit, _sonata_admin: kaoz4.admin.tag }    
+
+comment_admin_create:
+    pattern:  comments/create
+    defaults: { _controller: kaoz4AdminBundle:CommentAdmin:create, _sonata_admin: kaoz4.admin.comment }    
+comment_admin_list:
+    pattern:  comments
+    defaults: { _controller: kaoz4AdminBundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
+comment_admin_batch:
+    pattern:  comments/batch
+    defaults: { _controller: kaoz4AdminBundle:CommentAdmin:batch, _sonata_admin: kaoz4.admin.comment }
+comment_admin_edit:
+    pattern:  comments/edit/{id}
+    defaults: { _controller: kaoz4AdminBundle:CommentAdmin:edit, _sonata_admin: kaoz4.admin.comment }        
+    
+user_admin_create:
+    pattern:  users/create
+    defaults: { _controller: kaoz4AdminBundle:UserAdmin:create, _sonata_admin: kaoz4.admin.user }    
+user_admin_list:
+    pattern:  users
+    defaults: { _controller: kaoz4AdminBundle:UserAdmin:list, _sonata_admin: kaoz4.admin.user }
+user_admin_batch:
+    pattern:  users/batch
+    defaults: { _controller: kaoz4AdminBundle:UserAdmin:batch, _sonata_admin: kaoz4.admin.user }
+user_admin_edit:
+    pattern:  users/edit/{id}
+    defaults: { _controller: kaoz4AdminBundle:UserAdmin:edit, _sonata_admin: kaoz4.admin.user }            

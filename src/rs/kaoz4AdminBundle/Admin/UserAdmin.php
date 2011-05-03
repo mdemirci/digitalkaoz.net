@@ -1,6 +1,6 @@
 <?php
 
-namespace rs\kaoz4Bundle\Admin;
+namespace rs\kaoz4AdminBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 /**
@@ -32,7 +32,7 @@ class UserAdmin extends Admin
         'username',
         'email',
         'enabled' => array('form_field_options' => array('required' => false)),
-#     'groups' => array('edit' => 'list', 'type'=>'rs\kaoz4Bundle\Ent'),
+#     'groups' => array('edit' => 'list', 'type'=>'rs\kaoz4AdminBundle\Ent'),
 #     'expiresAt',
 #     'roles',
             #'author' => array('edit' => 'list'),        

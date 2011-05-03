@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace rs\kaoz4Bundle\Admin;
+namespace rs\kaoz4AdminBundle\Admin;
 
-class NewsAdmin extends BaseContentAdmin
+class PostAdmin extends BaseContentAdmin
 {
-    protected $baseRouteName = "news_admin";
+    protected $baseRouteName = "post_admin";
     
 }

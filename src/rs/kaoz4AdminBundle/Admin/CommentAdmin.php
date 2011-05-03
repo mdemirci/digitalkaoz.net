@@ -9,55 +9,56 @@
  * file that was distributed with this source code.
  */
 
-namespace rs\kaoz4Bundle\Admin;
+namespace rs\kaoz4AdminBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 
-use rs\kaoz4Bundle\Entity\Comment;
+use rs\kaoz4AdminBundle\Entity\Comment;
 
 class CommentAdmin extends Admin
 {
     protected $baseRouteName = "comment_admin";
-    protected $baseRoutePattern = "comment";    
 
-    protected $parentAssociationMapping = 'post';
+#    protected $parentAssociationMapping = array('post'=>'0');
     
     protected $list = array(
         'name' => array('identifier'=>true  ),
-        'getStatusCode' => array('label' => 'status_code', 'type' => 'string'),
-        'post',
+#        'post' => array('type'=>'string'),
         'email',
-        'url',
-        'message',
+        'homepage',
+        'text',
+        'enabled',
+        'created_at'
     );
 
     protected $form = array(
         'name',
         'email',
-        'url' => array('required'=>false),
-        'message',
-        'post' => array('edit' => 'list'),
-        'status' => array('type' => 'choice'),
+        'homepage' => array('required'=>false),
+        'text',
+        'enabled'
+#        'post' => array('edit' => 'list'),
+#        'status' => array('type' => 'choice'),
     );
 
     protected $formGroups = array(
         'General' => array(
-            'fields' => array('post', 'name', 'email', 'url', 'message', 'status')
+            'fields' => array('name', 'email', 'homepage', 'text','enabled')
         )
     );
 
     protected $filter = array(
         'name',
         'email',
-        'message',
+        'text',
     );
 
     public function configureFormFields(FormMapper $form)
     {
-        $form->add('status', array('choices' => Comment::getStatusList()), array('type' => 'choice'));
+        #$form->add('status', array('choices' => Comment::getStatusList()), array('type' => 'choice'));
     }
 
 

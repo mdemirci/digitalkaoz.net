@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace rs\kaoz4Bundle\Admin;
+namespace rs\kaoz4AdminBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;

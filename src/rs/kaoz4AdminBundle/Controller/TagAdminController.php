@@ -1,6 +1,6 @@
 <?php
 
-namespace rs\kaoz4Bundle\Controller;
+namespace rs\kaoz4AdminBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController as Controller;
 

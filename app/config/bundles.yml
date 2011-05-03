@@ -18,6 +18,7 @@ all:
   - FOS\UserBundle\FOSUserBundle
 
   - rs\kaoz4Bundle\kaoz4Bundle
+  - rs\kaoz4AdminBundle\kaoz4AdminBundle
 #  - rs\ProjectUtilitiesBundle\ProjectUtilitiesBundle
   
 dev:

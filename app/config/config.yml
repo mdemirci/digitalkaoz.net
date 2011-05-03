@@ -21,45 +21,45 @@ framework:
 
 services:    
    kaoz4.admin.post:
-      class: rs\kaoz4Bundle\Admin\PostAdmin
+      class: rs\kaoz4AdminBundle\Admin\PostAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: Contents, label: Posts }
-      arguments: [null, rs\kaoz4Bundle\Entity\Post, kaoz4Bundle:PostAdmin]
+      arguments: [null, rs\kaoz4Bundle\Entity\Post, kaoz4AdminBundle:PostAdmin]
       pool: AdminPool       
 
    kaoz4.admin.tag:
-      class: rs\kaoz4Bundle\Admin\TagAdmin
+      class: rs\kaoz4AdminBundle\Admin\TagAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: Attachments, label: Tags }
-      arguments: [null, rs\kaoz4Bundle\Entity\Tag, kaoz4Bundle:TagAdmin]
+      arguments: [null, rs\kaoz4Bundle\Entity\Tag, kaoz4AdminBundle:TagAdmin]
       pool: AdminPool       
 
-   kaoz4.admin.tag:
-      class: rs\kaoz4Bundle\Admin\CommentAdmin
+   kaoz4.admin.comment:
+      class: rs\kaoz4AdminBundle\Admin\CommentAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: Attachments, label: Comments }
-      arguments: [null, rs\kaoz4Bundle\Entity\Comment, kaoz4Bundle:CommentAdmin]
+      arguments: [null, rs\kaoz4Bundle\Entity\Comment, kaoz4AdminBundle:CommentAdmin]
       pool: AdminPool       
 
    kaoz4.admin.contribution:
-      class: rs\kaoz4Bundle\Admin\ContributionAdmin
+      class: rs\kaoz4AdminBundle\Admin\ContributionAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: Contents, label: Contributions }
-      arguments: [null, rs\kaoz4Bundle\Entity\Contribution, kaoz4Bundle:ContributionAdmin]
+      arguments: [null, rs\kaoz4Bundle\Entity\Contribution, kaoz4AdminBundle:ContributionAdmin]
       pool: AdminPool       
 
    kaoz4.admin.news:
-      class: rs\kaoz4Bundle\Admin\NewsAdmin
+      class: rs\kaoz4AdminBundle\Admin\NewsAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: Contents, label: News }
-      arguments: [null, rs\kaoz4Bundle\Entity\News, kaoz4Bundle:NewsAdmin]
+      arguments: [null, rs\kaoz4Bundle\Entity\News, kaoz4AdminBundle:NewsAdmin]
       pool: AdminPool       
       
    kaoz4.admin.user:
-      class: rs\kaoz4Bundle\Admin\UserAdmin
+      class: rs\kaoz4AdminBundle\Admin\UserAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: Credentials, label: User }
-      arguments: [null, rs\kaoz4Bundle\Entity\User, kaoz4Bundle:UserAdmin]
+      arguments: [null, rs\kaoz4Bundle\Entity\User, kaoz4AdminBundle:UserAdmin]
       pool: AdminPool
           
 fos_user:

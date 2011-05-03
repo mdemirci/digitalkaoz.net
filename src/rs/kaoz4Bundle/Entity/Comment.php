@@ -4,6 +4,7 @@ namespace rs\kaoz4Bundle\Entity;
 
 /**
  * @orm:Entity
+ * @orm:HasLifeCycleCallbacks
  */
 class Comment
 {
@@ -42,7 +43,7 @@ class Comment
     private $updated_at;
     
     /** 
-     * @orm:Column(type="datetime") 
+     * @orm:Column(type="datetime", nullable=true) 
      * @todo doctrine extension
      */
     private $deleted_at;
