@@ -15,7 +15,7 @@ class Contribution extends BaseContent
     private $id;
     
     /** @orm:Column(type="string") */
-    private $contrib;
+    private $url;
     
     /**
      * Get id
@@ -27,23 +27,24 @@ class Contribution extends BaseContent
         return $this->id;
     }
 
+
     /**
-     * Set contrib
+     * Set url
      *
-     * @param string $contrib
+     * @param string $url
      */
-    public function setContrib($contrib)
+    public function setUrl($url)
     {
-        $this->contrib = $contrib;
+        $this->url = $url;
     }
 
     /**
-     * Get contrib
+     * Get url
      *
-     * @return string $contrib
+     * @return string $url
      */
-    public function getContrib()
+    public function getUrl()
     {
-        return $this->contrib;
+        return $this->url;
     }
 }

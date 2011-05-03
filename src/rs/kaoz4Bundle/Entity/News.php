@@ -14,9 +14,6 @@ class News extends BaseContent
      */
     private $id;
     
-    /** @orm:Column(type="string") */
-    private $news;
-    
     /**
      * Get id
      *
@@ -27,23 +24,4 @@ class News extends BaseContent
         return $this->id;
     }
 
-    /**
-     * Set news
-     *
-     * @param string $news
-     */
-    public function setNews($news)
-    {
-        $this->news = $news;
-    }
-
-    /**
-     * Get news
-     *
-     * @return string $news
-     */
-    public function getNews()
-    {
-        return $this->news;
-    }
 }

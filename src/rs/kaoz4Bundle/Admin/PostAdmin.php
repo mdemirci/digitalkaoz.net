@@ -35,21 +35,22 @@ class PostAdmin extends Admin
 
     protected $list = array(
         'title' => array('identifier' => true,'type'=>'string'),
-        'author' => array('type'=>'string'),
-        'enabled'=> array('type'=>'boolean'),
-        'commentsEnabled',
+        'abstract',
+#        'author' => array('type'=>'string'),
+#        'enabled'=> array('type'=>'boolean'),
+#        'commentsEnabled',
     );
 
     protected $form = array(
         #'author' => array('type'=>'choice','choices'=>array('foo','bar')),
-        'enabled' => array('form_field_options' => array('required' => false)),
+#        'enabled' => array('form_field_options' => array('required' => false)),
         #'image' => array('type'=>'input'),
         'title',
         'abstract',
         'content',
         'tags'     => array('edit' => 'list','form_field_options' => array('expanded'=>true)),
-        'commentsCloseAt',
-        'commentsEnabled' => array('form_field_options' => array('required' => false)),
+#        'commentsCloseAt',
+#        'commentsEnabled' => array('form_field_options' => array('required' => false)),
     );
 
     protected $formGroups = array(
@@ -59,15 +60,15 @@ class PostAdmin extends Admin
         'Tags' => array(
             'fields' => array('tags'),
         ),
-        'Options' => array(
-            'fields' => array('enabled', 'commentsCloseAt', 'commentsEnabled', 'commentsDefaultStatus'),
-            'collapsed' => true
-        )
+#        'Options' => array(
+#            'fields' => array('enabled', 'commentsCloseAt', 'commentsEnabled', 'commentsDefaultStatus'),
+#            'collapsed' => true
+#        )
     );
 
     protected $filter = array(
         'title'=>array('type'=>'string'),
-        'enabled',array('type'=>'boolean'),
+ #       'enabled',array('type'=>'boolean'),
         'tags' => array('filter_field_options' => array('expanded' => true, 'multiple' => true))
     );
 
@@ -75,9 +76,9 @@ class PostAdmin extends Admin
     {
         #$form->add('author', array('choices' => array('foo','bar')), array('type' => 'choice'));
         #$form->add('image', array(), array('edit' => 'list', 'link_parameters' => array('context' => 'news')));
-        $form->add('commentsDefaultStatus', array('choices' => Comment::getStatusList()), array('type' => 'choice'));
+  #      $form->add('commentsDefaultStatus', array('choices' => Comment::getStatusList()), array('type' => 'choice'));
     }
-
+/*
     public function configureDatagridFilters(DatagridMapper $datagrid)
     {
         $datagrid->add('with_open_comments', array(
@@ -163,7 +164,7 @@ class PostAdmin extends Admin
 
         return $menu;
     }
-
+*/
     public function setUserManager($userManager)
     {
         $this->userManager = $userManager;

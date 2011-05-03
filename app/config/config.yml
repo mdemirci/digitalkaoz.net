@@ -27,14 +27,14 @@ services:
 #        - { name: sonata.admin, manager_type: orm, group: blog, label: comment }
 #      arguments: [rs\kaoz4Bundle\Entity\Comment, kaoz4Bundle:CommentAdmin]
 #      pool: AdminPool       
-#   sonata.news.admin.post:
-#      class: rs\kaoz4Bundle\Admin\PostAdmin
-#      tags:
-#        - { name: sonata.admin, manager_type: orm, group: blog, label: post }
-#      arguments: [rs\kaoz4Bundle\Entity\Post, kaoz4Bundle:PostAdmin]
-#      pool: AdminPool       
+   kaoz4.admin.post:
+      class: rs\kaoz4Bundle\Admin\PostAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: blog, label: post }
+      arguments: [null, rs\kaoz4Bundle\Entity\Post, kaoz4Bundle:PostAdmin]
+      pool: AdminPool       
 
-    kaoz4.admin.tag:
+   kaoz4.admin.tag:
       class: rs\kaoz4Bundle\Admin\TagAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, group: blog, label: tag }

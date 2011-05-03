@@ -14,9 +14,6 @@ class Post extends BaseContent
      */    
     private $id;
     
-    /** @orm:Column(type="string") */
-    private $post;
-    
     /**
      * Get id
      *
@@ -27,23 +24,4 @@ class Post extends BaseContent
         return $this->id;
     }
 
-    /**
-     * Set post
-     *
-     * @param string $post
-     */
-    public function setPost($post)
-    {
-        $this->post = $post;
-    }
-
-    /**
-     * Get post
-     *
-     * @return string $post
-     */
-    public function getPost()
-    {
-        return $this->post;
-    }
 }
