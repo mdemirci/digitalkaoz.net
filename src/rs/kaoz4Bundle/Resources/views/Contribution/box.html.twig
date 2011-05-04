@@ -1,0 +1,12 @@
+{% block content %}
+    <h2>{% trans %}Contributions{% endtrans %}</h2>
+    
+    {% for contribution in pager.getResults() %}
+        <div>
+            <h3><a href="{{ url('contribution_view', { 'slug': contribution.slug}) }}">{{ contribution.title }}</a></h3>
+            <div>
+                {{ contribution.abstract }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

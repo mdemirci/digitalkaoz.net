@@ -48,13 +48,6 @@ services:
       arguments: [null, rs\kaoz4Bundle\Entity\Contribution, kaoz4AdminBundle:ContributionAdmin]
       pool: AdminPool       
 
-   kaoz4.admin.news:
-      class: rs\kaoz4AdminBundle\Admin\NewsAdmin
-      tags:
-        - { name: sonata.admin, manager_type: orm, group: Contents, label: News }
-      arguments: [null, rs\kaoz4Bundle\Entity\News, kaoz4AdminBundle:NewsAdmin]
-      pool: AdminPool       
-      
    kaoz4.admin.user:
       class: rs\kaoz4AdminBundle\Admin\UserAdmin
       tags:

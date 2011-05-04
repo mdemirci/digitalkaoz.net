@@ -18,14 +18,14 @@ class MainMenu extends Menu
 
         $this->setCurrentUri($request->getRequestUri());
 
-        $github = $this->createChild('Github', 'https://github.com/digitalkaoz');
-        $github->setLinkAttribute('target','_blank');
         
         $this->addChild('Home', $router->generate('homepage'));                
         $this->addChild($this->blogTree($router));
+        $this->addChild($this->contributionTree($router));
+        $this->addChild('About', $router->generate('about'));
         
-        $this->addChild($github);
-        $this->addChild('Wordpress', 'http://digitalkaoz.net');
+        $this->addChild($this->createExternal('Github', 'https://github.com/digitalkaoz'));
+        $this->addChild($this->createExternal('Wordpress', 'http://digitalkaoz.net'));
         $this->addChild('Admin Dashboard', $router->generate('sonata_admin_dashboard'));                
     }
     
@@ -38,5 +38,20 @@ class MainMenu extends Menu
 #        $node->addChild('categories',$router->generate('blog_categories'));
         
         return $node;
+    }
+    
+    protected function contributionTree(Router $router)
+    {
+        $node = $this->createChild('Projects', $router->generate('contributions'));
+                
+        return $node;
+    }
+
+    protected function createExternal($name,$url)
+    {
+        $www = $this->createChild($name, $url);
+        $www->setLinkAttribute('target','_blank');
+        
+        return $www;
     }
 }

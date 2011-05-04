@@ -1,0 +1,12 @@
+contributions:
+    pattern:  /
+    defaults: { _controller: kaoz4Bundle:Contribution:archive }    
+
+contribution_latest:
+    pattern:  /latest
+    defaults: { _controller: kaoz4Bundle:Contribution:latest }    
+
+contribution_view:
+    pattern:  /{slug}
+    defaults: { _controller: kaoz4Bundle:Contribution:view }    
+    

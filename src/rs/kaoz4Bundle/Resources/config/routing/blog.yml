@@ -2,7 +2,10 @@ blog:
     pattern:  /
     defaults: { _controller: kaoz4Bundle:Blog:archive }    
 
+blog_latest:
+    pattern:  /latest
+    defaults: { _controller: kaoz4Bundle:Blog:latest }    
+
 blog_view:
     pattern:  /{year}/{month}/{day}/{slug}
     defaults: { _controller: kaoz4Bundle:Blog:view }    
-    

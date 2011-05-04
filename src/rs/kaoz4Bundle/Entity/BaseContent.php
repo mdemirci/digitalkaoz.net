@@ -6,7 +6,7 @@ namespace rs\kaoz4Bundle\Entity;
  * @orm:Entity(repositoryClass="rs\kaoz4Bundle\Entity\BaseContentRepository")
  * @orm:InheritanceType("JOINED")
  * @orm:DiscriminatorColumn(name="discr", type="string")
- * @orm:DiscriminatorMap({"post" = "Post", "contribution" = "Contribution", "news" = "News" })
+ * @orm:DiscriminatorMap({"post" = "Post", "contribution" = "Contribution"})
  * @orm:HasLifecycleCallbacks
  */
 class BaseContent

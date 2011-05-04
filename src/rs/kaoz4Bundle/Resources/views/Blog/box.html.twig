@@ -1,0 +1,12 @@
+{% block content %}
+    <h2>{% trans %}Blog{% endtrans %}</h2>
+    
+    {% for post in pager.getResults() %}
+        <div>
+            <h3><a href="{{ url('blog_view', { 'year': post.year, 'month': post.month, 'day': post.day, 'slug': post.slug}) }}">{{ post.title }}</a></h3>
+            <div>
+                {{ post.abstract }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

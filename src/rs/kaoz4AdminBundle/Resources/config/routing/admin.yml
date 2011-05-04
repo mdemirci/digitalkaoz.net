@@ -14,22 +14,6 @@ post_admin_comments:
     pattern:  comments
     defaults: { _controller: kaoz4AdminBundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
 
-news_admin_create:
-    pattern:  news/create
-    defaults: { _controller: kaoz4AdminBundle:NewsAdmin:create, _sonata_admin: kaoz4.admin.news }    
-news_admin_list:
-    pattern:  news
-    defaults: { _controller: kaoz4AdminBundle:NewsAdmin:list, _sonata_admin: kaoz4.admin.news }
-news_admin_batch:
-    pattern:  news/batch
-    defaults: { _controller: kaoz4AdminBundle:NewsAdmin:batch, _sonata_admin: kaoz4.admin.news }
-news_admin_edit:
-    pattern:  news/edit/{id}
-    defaults: { _controller: kaoz4AdminBundle:NewsAdmin:edit, _sonata_admin: kaoz4.admin.news }
-news_admin_comments:
-    pattern:  comments
-    defaults: { _controller: kaoz4AdminBundle:CommentAdmin:list, _sonata_admin: kaoz4.admin.comment }
-
 contribution_admin_create:
     pattern:  contribution/create
     defaults: { _controller: kaoz4AdminBundle:ContributionAdmin:create, _sonata_admin: kaoz4.admin.contribution }    

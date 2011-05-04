@@ -5,22 +5,21 @@
     <div id="header">
         {% include "kaoz4Bundle:Components:mainMenu.html.twig" %}
     </div>
-    <div id="main">
+    <div id="main" class="{{ app.request.attributes.get('_route') }}" >
         <div id="col1">
-            <div id="col1_content" class="clearfix">
+            <div id="col1_content" class="clearfix box">
                 {% block content %}{% endblock %}
             </div>
         </div>
         <div id="col3">
             <div id="col3_content" class="clearfix">
                 {% block sidebar %}{% endblock %}
-                <!-- add your content here -->
             </div>
             <!-- IE Column Clearing -->
             <div id="ie_clearing"> &#160; </div>
         </div>
     </div>
-    {% include "kaoz4Bundle:Components:footer.html.twig" %}
+   {% include "kaoz4Bundle:Components:footer.html.twig" %}
 </div>
 </div>
 {% endblock %}

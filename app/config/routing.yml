@@ -1,6 +1,10 @@
 homepage:
     pattern:  /
     defaults: { _controller: kaoz4Bundle:Home:index }
+    
+about:
+    pattern:  /about
+    defaults: { _controller: kaoz4Bundle:Home:about }
 
 dashboard:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
@@ -8,6 +12,10 @@ dashboard:
 blog:
   resource: '@kaoz4Bundle/Resources/config/routing/blog.yml'
   prefix:   /blog
+
+contribution:
+  resource: '@kaoz4Bundle/Resources/config/routing/contribution.yml'
+  prefix:   /projects
 
 admin:
   resource: '@kaoz4AdminBundle/Resources/config/routing/admin.yml'
