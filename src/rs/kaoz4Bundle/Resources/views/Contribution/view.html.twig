@@ -26,5 +26,5 @@
 {% endblock %}
 
 {% block sidebar %}
-    {% render 'kaoz4Bundle:Contribution:sidebar' with {'slug':contribution.slug} %}    
+    {% render 'kaoz4Bundle:Contribution:sidebar' with {'slug':contribution.slug}, {'standalone': true} %}    
 {% endblock %}

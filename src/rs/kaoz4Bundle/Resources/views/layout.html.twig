@@ -3,7 +3,7 @@
 {% block body %}
 <div class="page_margins">
     <div id="header">
-       {% render 'kaoz4Bundle:Home:widget' with { 'widget':'header'} %}
+       {% render 'kaoz4Bundle:Home:widget' with { 'widget':'header'}, {'standalone': true} %}
     </div>
     <div id="main" class="{{ app.request.attributes.get('_route') }}" >
         <div id="col1">
@@ -19,7 +19,7 @@
             <div id="ie_clearing"> &#160; </div>
         </div>
     </div>
-   {% render 'kaoz4Bundle:Home:widget' with { 'widget':'footer'} %}
+   {% render 'kaoz4Bundle:Home:widget' with { 'widget':'footer'}, {'standalone': true} %}
    
 </div>
 </div>

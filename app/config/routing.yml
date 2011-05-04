@@ -27,3 +27,7 @@ fos_user_security:
 fos_user_user:
     resource: '@FOSUserBundle/Resources/config/routing/user.xml'
     prefix: /user
+    
+_internal:
+    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+    prefix:   /_internal    
