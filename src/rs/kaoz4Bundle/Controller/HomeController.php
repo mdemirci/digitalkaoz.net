@@ -22,4 +22,21 @@ class HomeController extends Controller
     {
         return $this->render('kaoz4Bundle:Home:about.html.twig');
     }
+    
+    /**
+     * @extra:Route("/widget/{widget}", name="widget")
+     * @extra:Template()
+     */    
+    public function widgetAction($widget)
+    {
+        switch($widget)
+        {
+            case 'socials' : return $this->render('kaoz4Bundle:Components:socials.html.twig');
+            case 'footer' : return $this->render('kaoz4Bundle:Components:footer.html.twig');
+            case 'header' : return $this->render('kaoz4Bundle:Components:header.html.twig');
+                
+        }
+        
+    }
+        
 }

@@ -3,8 +3,7 @@
 {% block body %}
 <div class="page_margins">
     <div id="header">
-        <h1>Digital.kaoZ</h1>
-        {% include "kaoz4Bundle:Components:mainMenu.html.twig" %}
+       {% render 'kaoz4Bundle:Home:widget' with { 'widget':'header'} %}
     </div>
     <div id="main" class="{{ app.request.attributes.get('_route') }}" >
         <div id="col1">
@@ -20,7 +19,8 @@
             <div id="ie_clearing"> &#160; </div>
         </div>
     </div>
-   {% include "kaoz4Bundle:Components:footer.html.twig" %}
+   {% render 'kaoz4Bundle:Home:widget' with { 'widget':'footer'} %}
+   
 </div>
 </div>
 {% endblock %}
