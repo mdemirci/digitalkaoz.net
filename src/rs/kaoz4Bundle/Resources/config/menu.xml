@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="menu.main.class">rs\kaoz4Bundle\Menu\MainMenu</parameter>
+        <parameter key="menu.main.class">rs\kaoz4Bundle\Menu\Menu</parameter>
     </parameters>
 
     <services>
@@ -13,6 +13,27 @@
             <tag name="menu" alias="main" />
             <argument type="service" id="request" />
             <argument type="service" id="router" />
+            <argument type="string" id="menu" >main</argument>
+        </service>
+        <service id="menu.blog" class="%menu.main.class%" scope="request">
+            <tag name="menu" alias="blog" />
+            <argument type="service" id="request" />
+            <argument type="service" id="router" />
+            <argument type="string" id="menu" >blog</argument>
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+        <service id="menu.footer" class="%menu.main.class%" scope="request">
+            <tag name="menu" alias="footer" />
+            <argument type="service" id="request" />
+            <argument type="service" id="router" />
+            <argument type="string" id="menu" >footer</argument>
+        </service>
+        <service id="menu.contributions" class="%menu.main.class%" scope="request">
+            <tag name="menu" alias="contributions" />
+            <argument type="service" id="request" />
+            <argument type="service" id="router" />
+            <argument type="string" id="menu" >contributions</argument>
+            <argument type="service" id="doctrine.orm.entity_manager" />
         </service>
     </services>
 

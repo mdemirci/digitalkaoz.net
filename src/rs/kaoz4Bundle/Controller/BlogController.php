@@ -9,7 +9,7 @@ class BlogController extends BaseContentController
     protected $template = 'kaoz4Bundle:Blog:';
     protected $list_limit = 10;
 
-    public function viewAction($year, $month, $day, $slug)
+    public function viewAction( $slug)
     {
         $post = $this->getRepository()->findOneBySlug($slug);
 
@@ -20,13 +20,6 @@ class BlogController extends BaseContentController
     
     public function sidebarAction($slug=null)
     {
-        if($slug)
-        {
-            $post = $this->getRepository()->findOneBySlug($slug);
-        }
-
-        return $this->render($this->template.'sidebar.html.twig', array(
-            'post' => isset($post) ? $post : null,
-        ));
+        return $this->render($this->template.'sidebar.html.twig');
     }    
 }

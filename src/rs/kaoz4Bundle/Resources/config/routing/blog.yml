@@ -7,5 +7,5 @@ blog_latest:
     defaults: { _controller: kaoz4Bundle:Blog:latest }    
 
 blog_view:
-    pattern:  /{year}/{month}/{day}/{slug}
+    pattern:  /{slug}
     defaults: { _controller: kaoz4Bundle:Blog:view }    

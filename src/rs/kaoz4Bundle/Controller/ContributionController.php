@@ -18,4 +18,11 @@ class ContributionController extends BaseContentController
         ));
     }
     
+    public function sidebarAction()
+    {
+        return $this->render($this->template.'sidebar.html.twig', array(
+            'contribution' => isset($contribution) ? $contribution : null,
+        ));
+    }    
+    
 }

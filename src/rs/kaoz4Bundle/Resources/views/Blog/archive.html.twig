@@ -1,11 +1,11 @@
 {% extends "kaoz4Bundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>{% trans %}Blog{% endtrans %}</h1>
+    <h2>{% trans %}Blog{% endtrans %}</h2>
 
     {% for post in pager.getResults() %}
         <div>
-            <h2><a href="{{ url('blog_view', { 'year': post.year, 'month': post.month, 'day': post.day, 'slug': post.slug}) }}">{{ post.title }}</a></h2>
+            <h2><a href="{{ url('blog_view', {'slug': post.slug}) }}">{{ post.title }}</a></h2>
             <div>
                 {{ post.abstract }}
             </div>

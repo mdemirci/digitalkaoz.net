@@ -1,7 +1,7 @@
 {% extends "kaoz4Bundle::layout.html.twig" %}
 
 {% block content %}
-    <h1>{% trans %}Projects{% endtrans %}</h1>
+    <h2>{% trans %}Projects{% endtrans %}</h2>
 
     {% for contribution in pager.getResults() %}
         <div>
@@ -14,7 +14,5 @@
 {% endblock %}
 
 {% block sidebar %}
-    <div class="box">
-        {{ menu('main') }}
-   </div>
+    {% render 'kaoz4Bundle:Contribution:sidebar' %}    
 {% endblock %}
