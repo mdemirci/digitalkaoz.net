@@ -1,0 +1,120 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+    <!-- jQuery code -->
+    <link rel="stylesheet" href="{{ asset('bundles/sonatajquery/themes/flick/jquery-ui-1.8.6.custom.css') }}" type="text/css" media="all" />
+
+    <!-- blueprint code -->
+    <link rel="stylesheet" href="{{ asset('bundles/sonatablueprint/screen.css') }}" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="{{ asset('bundles/sonatablueprint/print.css') }}" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="{{ asset('bundles/sonatablueprint/ie.css') }}" type="text/css" media="screen, projection"><![endif]-->
+
+    <!-- base application asset -->
+    <link rel="stylesheet" href="{{ asset('bundles/sonataadmin/css/colors.css') }}" type="text/css" media="all">
+    <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" type="text/css" />        
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/sonatajquery/jquery-1.4.4.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/sonatajquery/jquery-ui-1.8.6.custom.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/sonatajquery/jquery-ui-i18n.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/sonataadmin/qtip/jquery.qtip-1.0.0-rc3.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/sonataadmin/jquery/jquery.form.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/sonataadmin/base.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %} {% trans from 'AdminBundle' %}Admin{% endtrans %}
+{% if action is defined %}
+    -
+    {% for label, uri in admin.breadcrumbs(action) %}
+        {% if not loop.first  %}
+            &gt;
+        {% endif %}
+        {{ label }}
+    {% endfor %}
+{% endif %}
+{% endblock %}
+
+{% set side_menu %}{% block side_menu %}{% endblock %}{% endset %}
+{% set content %}{% block content %}{% endblock %}{% endset %}
+{% set preview %}{% block preview %}{% endblock %}{% endset %}
+{% set form %}{% block form %}{% endblock %}{% endset %}
+{% set list_table %}{% block list_table %}{% endblock %}{% endset %}
+{% set list_filters %}{% block list_filters %}{% endblock %}{% endset %}
+            
+{% block body %}
+<div class="page_margins">
+    <div id="header">
+       {% render 'kaoz4Bundle:Home:widget' with { 'widget':'header'}, {'standalone': true} %}
+    </div>
+    <div id="main" class="{{ app.request.attributes.get('_route') }}" >
+        <div id="col1">
+            <div id="col1_content" class="clearfix box">
+                <h2>
+                {% block breadcrumb %}
+                    {% if action is defined %}
+                        {% for label, uri in admin.breadcrumbs(action) %}
+                            {% if not loop.first  %}
+                                &gt;
+                            {% endif %}
+                            <a href="{{ uri }}">{{ label }}</a>
+                        {% endfor %}
+                    {% endif %}
+                {% endblock %}
+                </h2>
+                {% if preview is not empty %}
+                    <div class="span-24 last content clear">
+                        <div class="sonata-ba-preview">{{ preview|raw }}</div>
+                    </div>
+                {% endif %}
+
+                    {% if content is not empty %}
+                        <div class="sonata-ba-content">{{ content|raw }}</div>
+                    {% endif %}
+
+                    {% if form is not empty %}
+                        <div class="sonata-ba-form">{{ form|raw }}</div>
+                    {% endif %}
+
+                    {% if list_table is not empty %}
+                        <div class="sonata-ba-list">
+                            <div class="span-19">
+                                {{ list_table|raw }}
+                            </div>
+                        </div>
+                    {% endif %}
+            </div>
+        </div>
+        <div id="col3">
+            <div id="col3_content" class="clearfix">
+                {% block sidebar %}{% endblock %}
+                <div class="box">
+                    <a href="{{ url('sonata_admin_dashboard') }}" class="home">{% trans from 'AdminBundle' %}Admin{% endtrans %}</a>
+                    {% block actions %}{% endblock %}
+                </div>
+                
+                {% if side_menu is not empty %}
+                    <div class="sonata-ba-side-menu box">
+                        {{ side_menu|raw }}
+                    </div>
+                {% endif %}
+                {% if list_filters is not empty %}
+                    <div class="sonata-ba-list box">
+                        {{ list_filters|raw }}
+                    </div>
+                {% endif %}
+                
+            </div>
+            <!-- IE Column Clearing -->
+            <div id="ie_clearing"> &#160; </div>
+        </div>
+    </div>
+   {% render 'kaoz4Bundle:Home:widget' with { 'widget':'footer'}, {'standalone': true} %}
+   
+</div>
+</div>
+{% endblock %}
+
+
+
+

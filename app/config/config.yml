@@ -90,7 +90,8 @@ doctrine:
 
 sonata_admin:
   templates:
-    ajax: SonataAdminBundle::ajax_layout.html.twig
+    layout: kaoz4AdminBundle::layout.html.twig
+#    ajax: SonataAdminBundle::ajax_layout.html.twig
 
 ## Swiftmailer Configuration
 #swiftmailer:

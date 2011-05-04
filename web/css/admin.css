@@ -1,0 +1,7 @@
+.box{
+    padding:0;
+}
+
+#col3_content .box{
+    padding:10px;
+}

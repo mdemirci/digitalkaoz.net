@@ -90,6 +90,10 @@
         width:100%;
     }
     
+    #header h1{
+        color:white;
+        padding:20px;
+    }
 }
 
 /* import print layout | Druck-Layout einbinden */
