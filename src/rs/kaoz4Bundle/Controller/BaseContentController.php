@@ -7,7 +7,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\RedirectResponse;
     
-use Sonata\AdminBundle\Datagrid\ORM\Pager as Pager;
+use rs\kaoz4Bundle\Util\Pager as Pager;
 
 use rs\kaoz4Bundle\Entity\Comment;
 
