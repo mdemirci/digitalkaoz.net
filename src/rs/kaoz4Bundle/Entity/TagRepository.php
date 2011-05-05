@@ -7,21 +7,44 @@ use Doctrine\ORM\EntityRepository;
 class TagRepository extends EntityRepository
 {
     /**
-     * finds comments by a post
+     * find tags by a content id
      * 
      * @param int $id
      * @return Doctrine\Common\Collections\Collection
      */
-    public function findByContent($id)
+    public function findByContentId($id)
     {
-        $qb = $this->createQueryBuilder('t');
         /**
          * @var $qb Doctrine\ORM\QueryBuilder
          */
-        return $qb
-            //->from('rs\kaoz4Bundle\Entity\Tag', 't')
-            ->innerJoin('t.contents','tc', 'WITH','tc.id='.$id)
+        return $this->createQueryBuilder('t')
+            ->innerJoin('t.contents','tc', 'WITH','tc.id= :id')
             ->groupBy('t.id')
-            ->getQuery()->execute();
+            ->getQuery()
+            ->setParameter('id', $id)
+            ->execute()
+        ;                
+    }    
+    
+    /**
+     * find tags by its content class
+     * 
+     * @param string $class
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function findByContentClass($class)
+    {
+        //return $this->findBy(array('discr'=>$class));
+        
+        /**
+         * @var $qb Doctrine\ORM\QueryBuilder
+         */
+        return $this->createQueryBuilder('t')
+            ->innerJoin('t.contents','tc')
+            ->groupBy('t.id')
+            ->getQuery()
+            //->setParameter('class', $class)
+            ->execute()
+        ;                
     }    
 }

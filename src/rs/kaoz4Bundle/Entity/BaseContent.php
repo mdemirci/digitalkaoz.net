@@ -17,7 +17,7 @@ class BaseContent
      * @orm:GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /** 
      * @orm:Column(type="string", unique=true) 
      * @orm:Index
@@ -424,5 +424,4 @@ class BaseContent
     {
         return $this->getCreatedAt()->format('d');
     }
-
 }

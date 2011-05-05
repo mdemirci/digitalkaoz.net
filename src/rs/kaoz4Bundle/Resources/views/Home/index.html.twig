@@ -7,22 +7,31 @@
 
     Pellentesque pretium, elit lacinia suscipit accumsan, risus lorem convallis metus, id elementum urna orci in dolor. Duis luctus hendrerit purus et feugiat. Cras vel pharetra elit. Suspendisse ultricies, enim sit amet dapibus eleifend, massa felis aliquet mauris, convallis tempus eros augue sed libero. Cras id aliquam sem. Duis eleifend tellus auctor diam semper sed dapibus lorem hendrerit. Phasellus venenatis justo ac tortor condimentum sit amet interdum eros tristique. Proin mollis aliquam mollis. Integer eu sapien vitae urna fringilla pharetra. Donec fermentum consequat lacus eu suscipit. Sed sollicitudin, dui ac pulvinar aliquet, libero tortor aliquet leo, id aliquam mi felis a augue. Suspendisse suscipit egestas dapibus. Phasellus dolor sapien, fringilla sed commodo vel, convallis sed libero. Donec ultricies lorem quis risus pretium fringilla non ac massa. 
     </p>
-    <p>
-    Morbi mollis venenatis semper. Morbi et dignissim nulla. Sed vel ipsum nulla, vitae vestibulum diam. Nulla nec ipsum magna, nec posuere sem. Proin vehicula, mauris a consequat porttitor, urna ante luctus metus, vitae condimentum purus quam et ante. Duis quis leo tortor, molestie commodo odio. Nulla vitae ipsum nulla. Duis tincidunt sem vel ipsum ultrices porttitor. Maecenas vel libero non quam aliquam lacinia a at libero. Ut sollicitudin ligula ut dolor fermentum non placerat quam ornare. Vivamus tristique euismod sollicitudin. Nullam rutrum adipiscing sem, nec rhoncus massa porttitor id. Nullam vel eros augue, in mattis turpis. Sed vel felis quis mauris blandit condimentum. Phasellus tristique interdum erat, vel ultrices felis consectetur id. Etiam elementum orci eu enim consequat in aliquam diam imperdiet. Etiam eget tortor felis. Integer enim diam, tincidunt ac placerat at, pharetra at diam. Donec dignissim eleifend dignissim.
-
-    Pellentesque pretium, elit lacinia suscipit accumsan, risus lorem convallis metus, id elementum urna orci in dolor. Duis luctus hendrerit purus et feugiat. Cras vel pharetra elit. Suspendisse ultricies, enim sit amet dapibus eleifend, massa felis aliquet mauris, convallis tempus eros augue sed libero. Cras id aliquam sem. Duis eleifend tellus auctor diam semper sed dapibus lorem hendrerit. Phasellus venenatis justo ac tortor condimentum sit amet interdum eros tristique. Proin mollis aliquam mollis. Integer eu sapien vitae urna fringilla pharetra. Donec fermentum consequat lacus eu suscipit. Sed sollicitudin, dui ac pulvinar aliquet, libero tortor aliquet leo, id aliquam mi felis a augue. Suspendisse suscipit egestas dapibus. Phasellus dolor sapien, fringilla sed commodo vel, convallis sed libero. Donec ultricies lorem quis risus pretium fringilla non ac massa. 
-    </p>
 
     <div class="subcolumns">
       <div class="c50l">
         <div class="subcl box box50">
-            {% render 'kaoz4Bundle:Blog:latest' %}    
+            {% render 'kaoz4Bundle:Blog:latest' with {}, {'standalone': true} %}    
         </div>
       </div>
 
       <div class="c50r">
         <div class="subcr box box50">
-        {% render 'kaoz4Bundle:Contribution:latest' %}    
+        {% render 'kaoz4Bundle:Contribution:latest' with {}, {'standalone': true} %}    
+        </div>
+      </div>
+    </div>  
+    
+    <div class="subcolumns">
+      <div class="c50l">
+        <div class="subcl box box50">
+            {% render 'kaoz4Bundle:Home:widget' with { 'widget':'socials'} , {'standalone': true} %}
+        </div>
+      </div>
+
+      <div class="c50r">
+        <div class="subcr box box50">
+            <h2>tweets</h2>
         </div>
       </div>
     </div>  

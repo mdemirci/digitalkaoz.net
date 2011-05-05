@@ -13,4 +13,24 @@ class Post extends BaseContent
      */
     private $id;
 
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     */
+    public function setId($id)
+    {
+        parent::setId($id);
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer $id
+     */
+    public function getId()
+    {
+        return parent::getId();
+    }
 }

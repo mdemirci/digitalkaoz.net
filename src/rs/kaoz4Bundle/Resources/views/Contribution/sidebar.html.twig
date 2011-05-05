@@ -1,3 +1,14 @@
 <div class="box">
     {{ menu('contributions') }}
+    
 </div>
+
+{% if contribution %}
+    <div class="box">
+        {% render 'kaoz4Bundle:Blog:tags' with { 'id': contribution.id }, {'standalone': true} %}
+    </div>
+{% else %}
+    <div class="box">
+        {% render 'kaoz4Bundle:Blog:tags' with { 'class': 'contribution' }, {'standalone': true} %}
+    </div>
+{% endif %}

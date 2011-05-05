@@ -13,8 +13,5 @@
 {% endblock %}
 
 {% block sidebar %}
-    {% render 'kaoz4Bundle:Contribution:sidebar' with {'slug':contribution.slug}, {'standalone': true} %}    
-    <div class="box">
-        {% render 'kaoz4Bundle:Blog:tags' with { 'id': contribution.id }, {'standalone': true} %}
-    </div>
+    {% render 'kaoz4Bundle:Contribution:sidebar' with {'id':contribution.id}, {'standalone': true} %}    
 {% endblock %}

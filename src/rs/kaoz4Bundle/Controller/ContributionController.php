@@ -18,10 +18,10 @@ class ContributionController extends BaseContentController
         ));
     }
     
-    public function sidebarAction()
+    public function sidebarAction($id = null)
     {
         return $this->render($this->template.'sidebar.html.twig', array(
-            'contribution' => isset($contribution) ? $contribution : null,
+            'contribution' => $this->getRepository()->find($id)
         ));
     }    
     

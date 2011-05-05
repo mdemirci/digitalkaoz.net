@@ -18,9 +18,11 @@ class BlogController extends BaseContentController
         ));
     }    
     
-    public function sidebarAction($slug=null)
+    public function sidebarAction($id=null)
     {
-        return $this->render($this->template.'sidebar.html.twig');
+        return $this->render($this->template.'sidebar.html.twig',array(
+            'post' => $this->getRepository()->find($id),
+        ));
     }    
     
     public function commentsAction($id)

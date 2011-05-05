@@ -5,4 +5,14 @@
 <div class="box">
     {% render 'kaoz4Bundle:Home:widget' with { 'widget':'socials'} %}
 </div>
-    
+
+{% if post %}
+    <div class="box">
+        {% render 'kaoz4Bundle:Blog:tags' with { 'id': post.id }, {'standalone': true} %}
+    </div>
+{% else %}
+    <div class="box">
+        {% render 'kaoz4Bundle:Blog:tags' with { 'class': 'post' }, {'standalone': true} %}
+    </div>
+{% endif %}
+

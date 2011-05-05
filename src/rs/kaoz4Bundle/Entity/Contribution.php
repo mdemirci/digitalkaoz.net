@@ -53,6 +53,6 @@ class Contribution extends BaseContent
      */
     public function setId($id)
     {
-        $this->id = $id;
+        parent::setId($id);
     }
 }

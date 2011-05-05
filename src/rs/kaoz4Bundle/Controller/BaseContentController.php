@@ -54,9 +54,9 @@ abstract class BaseContentController extends Controller
         ));
     }
 
-    public function latestAction()
+    public function latestAction($limit = 3)
     {
-        $query = $this->getRepository()->last(5);
+        $query = $this->getRepository()->last($limit);
 
         $pager = $this->getPager($query);
         $pager->init();
@@ -66,11 +66,17 @@ abstract class BaseContentController extends Controller
         ));
     }
     
-    public function tagsAction($id)
+    public function tagsAction($id = null, $class = null)
     {
         $em = $this->get('doctrine.orm.entity_manager');
-
-        $tags = $this->em()->getRepository('rs\kaoz4Bundle\Entity\Tag')->findByContent($id);
+        
+        if($id){
+            $tags = $this->em()->getRepository('rs\kaoz4Bundle\Entity\Tag')->findByContentId($id);
+        }elseif($class){
+            $tags = $this->em()->getRepository('rs\kaoz4Bundle\Entity\Tag')->findByContentClass($class);
+        }else{
+            $tags = $this->em()->getRepository('rs\kaoz4Bundle\Entity\Tag')->findAll();
+        }
         
         return $this->render('kaoz4Bundle:Components:'.'tags.html.twig', array(
             'tags'  => $tags,
