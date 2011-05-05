@@ -5,7 +5,7 @@
         <div>
             <h3><a href="{{ url('blog_view', { 'slug':post.slug}) }}">{{ post.title }}</a></h3>
             <div>
-                {{ post.abstract }}
+                {{ post.abstract|truncate(150)  }}
             </div>
         </div>
     {% endfor %}

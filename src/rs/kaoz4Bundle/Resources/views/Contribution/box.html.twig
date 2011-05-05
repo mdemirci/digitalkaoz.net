@@ -5,7 +5,7 @@
         <div>
             <h3><a href="{{ url('contribution_view', { 'slug': contribution.slug}) }}">{{ contribution.title }}</a></h3>
             <div>
-                {{ contribution.abstract }}
+                {{ contribution.abstract|truncate(150) }}
             </div>
         </div>
     {% endfor %}

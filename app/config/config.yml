@@ -67,7 +67,7 @@ fos_user:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-    
+    extensions:       [twig.extension.text]    
 ## Doctrine Configuration
 doctrine:
    dbal:

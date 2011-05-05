@@ -61,3 +61,6 @@
 [submodule "vendor/bundles/FOS/UserBundle"]
 	path = vendor/bundles/FOS/UserBundle
 	url = git://github.com/FriendsOfSymfony/UserBundle.git
+[submodule "vendor/twig-extensions"]
+	path = vendor/twig-extensions
+	url = git://github.com/fabpot/Twig-extensions.git
