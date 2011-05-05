@@ -10,21 +10,11 @@
         {{ contribution.content }}
     </div>
 
-
-    {% render 'kaoz4Bundle:Contribution:comments' with { 'id': contribution.id } %}
-
-<!--    {% if contribution.commentsEnabled %}
-        {% render 'kaoz4Bundle:Contribution:addCommentForm' with {
-            'post_id': post.id,
-            'form': form
-        } %}
-    {% else %}
-        <div>
-            {% trans %}message_comments_are_closed{% endtrans %}
-        </div>
-    {% endif %}-->
 {% endblock %}
 
 {% block sidebar %}
     {% render 'kaoz4Bundle:Contribution:sidebar' with {'slug':contribution.slug}, {'standalone': true} %}    
+    <div class="box">
+        {% render 'kaoz4Bundle:Blog:tags' with { 'id': contribution.id }, {'standalone': true} %}
+    </div>
 {% endblock %}

@@ -66,14 +66,14 @@ abstract class BaseContentController extends Controller
         ));
     }
     
-    public function commentsAction($id)
+    public function tagsAction($id)
     {
         $em = $this->get('doctrine.orm.entity_manager');
 
-        $comments = $this->em()->getRepository('rs\kaoz4Bundle\Entity\Comment')->findByPost($id);
-
-        return $this->render($this->template.'comments.html.twig', array(
-            'comments'  => $comments,
+        $tags = $this->em()->getRepository('rs\kaoz4Bundle\Entity\Tag')->findByContent($id);
+        
+        return $this->render('kaoz4Bundle:Components:'.'tags.html.twig', array(
+            'tags'  => $tags,
         ));
     }
     

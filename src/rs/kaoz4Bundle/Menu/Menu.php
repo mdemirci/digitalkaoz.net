@@ -32,7 +32,7 @@ class Menu extends BaseMenu
     {        
         $this->addChild('Home', $router->generate('homepage'));
         $this->addChild('Blog', $router->generate('blog'));
-        $this->addChild('Contributions', $router->generate('contributions'));
+        $this->addChild('Projects', $router->generate('contributions'));
         $this->addChild('About', $router->generate('about'));
         
         $this->addChild($this->createExternal('Github', 'https://github.com/digitalkaoz'));

@@ -8,23 +8,28 @@
 
     <div>
         {{ post.content }}
-    </div>
+    </div>    
 
-
-    {% render 'kaoz4Bundle:Blog:comments' with { 'id': post.id } %}
+    {% render 'kaoz4Bundle:Blog:comments' with { 'id': post.id }, {'standalone': true} %}
 
 <!--    {% if post.commentsEnabled %}
         {% render 'kaoz4Bundle:Blog:addCommentForm' with {
             'post_id': post.id,
             'form': form
-        } %}
+        }, {'standalone': true} %}
     {% else %}
         <div>
             {% trans %}message_comments_are_closed{% endtrans %}
         </div>
     {% endif %}-->
+    
+
 {% endblock %}
 
 {% block sidebar %}
     {% render 'kaoz4Bundle:Blog:sidebar' with {'slug':post.slug}, {'standalone': true} %}    
+    
+    <div class="box">
+        {% render 'kaoz4Bundle:Blog:tags' with { 'id': post.id }, {'standalone': true} %}
+    </div>
 {% endblock %}

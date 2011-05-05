@@ -3,7 +3,7 @@
 namespace rs\kaoz4Bundle\Entity;
 
 /**
- * @orm:Entity
+ * @orm:Entity(repositoryClass="rs\kaoz4Bundle\Entity\TagRepository")
  */
 class Tag
 {
